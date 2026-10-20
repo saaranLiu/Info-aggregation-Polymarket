@@ -13,8 +13,12 @@ if [[ "$MODE" == "presentation" ]]; then
   for stage in 11_outputs 18_r2_outputs 28_v3_tables 35_external_tables 10_figures 19_r2_figures 29_editorial_outputs 36_cross_platform; do
     "$PYTHON_BIN" "analysis/$stage.py"
   done
-  bash paper/build.sh
-  "$PYTHON_BIN" analysis/validate.py --layout
+  if [[ -f paper/build.sh ]]; then
+    bash paper/build.sh
+    "$PYTHON_BIN" analysis/validate.py --layout
+  else
+    "$PYTHON_BIN" analysis/validate.py
+  fi
   exit 0
 fi
 if [[ "$MODE" == "raw" ]]; then
@@ -58,5 +62,9 @@ fi
 "$PYTHON_BIN" analysis/35_external_tables.py
 "$PYTHON_BIN" analysis/29_editorial_outputs.py
 "$PYTHON_BIN" analysis/36_cross_platform.py
-bash paper/build.sh
-"$PYTHON_BIN" analysis/validate.py --layout
+if [[ -f paper/build.sh ]]; then
+  bash paper/build.sh
+  "$PYTHON_BIN" analysis/validate.py --layout
+else
+  "$PYTHON_BIN" analysis/validate.py
+fi

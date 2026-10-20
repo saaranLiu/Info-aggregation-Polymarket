@@ -1,6 +1,6 @@
 # Result tables and definitions
 
-The CSV files are saved numerical summaries for the current paper. Raw estimates are not silently replaced by values from different samples. Rebuilding paper tables and tests from summaries does not rerun the underlying database analysis.
+The CSV files are saved numerical summaries. Raw estimates are not silently replaced by values from different samples. Rebuilding derived tables from these summaries does not rerun the underlying database analysis.
 
 ## Canonical paper outputs
 

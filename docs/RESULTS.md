@@ -1,4 +1,4 @@
-> Working notes from earlier analysis stages. Current manuscript estimands and conventions are defined in `paper/main.tex` and `results/README.md`.
+> Working notes from earlier analysis stages. Current estimands and conventions are defined in `results/README.md`.
 
 # Current results and measurement definitions
 

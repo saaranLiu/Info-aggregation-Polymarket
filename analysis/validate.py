@@ -18,6 +18,20 @@ def read(name):
         return list(csv.DictReader(f))
 
 
+def write_sources():
+    rows=[]
+    for p in sorted(RES.rglob("*.csv")):
+        kind=("derived" if p.name.startswith(("paper_","robustness_matrix","joint_","weight_","size_response","account_persistence"))
+              else "event-data analysis (scripts 13b-17)" if p.name.startswith(("clk_","qv_","fp_","wb_F","repro_","audit_C_weights_YesNo"))
+              else "saved source summary")
+        rows.append(dict(file=str(p.relative_to(RES)),sha256=hashlib.sha256(p.read_bytes()).hexdigest(),kind=kind))
+    manifest=dict(raw_estimate_run_date="2026-10-14",event_data_rerun_date="2026-10-19",unit="probability bp unless specified in README.md",
+                  source_values_preserved=True,raw_data_rerun=False,
+                  canonical_sample_policy="observed_h100 for fixed-horizon claims; main for pre-trade metrics",
+                  files=rows)
+    (RES/"SOURCES.json").write_text(json.dumps(manifest,indent=2)+"\n")
+
+
 def main():
     from importlib.util import spec_from_file_location, module_from_spec
     spec = spec_from_file_location("outputs", ROOT / "analysis/11_outputs.py")
@@ -41,29 +55,6 @@ def main():
     assert all(r["sample"] == "observed_h100" for r in eq)
     assert not any(r["equivalent_at_5pct"] == "True" and float(r["margin_bp"]) == 25 for r in eq)
     assert not any(r["equivalent_at_5pct"] == "True" and r["cell"] == "Crypto | s3 >=$1k" for r in eq)
-    tex=(ROOT/"paper/main.tex").read_text()
-    assert not re.search(r"reviewer|earlier version|previous version|withdraw|no longer use|revised claim",tex,re.I)
-    assert not re.search(r"XXXX|AAMAS|Dublin|acmConference",tex)
-    rendered_prose = tex + "\n" + "\n".join(
-        (ROOT/"paper"/(name+".tex")).read_text()
-        for name in re.findall(r"\\input\{(tables/[^}]+)\}",tex))
-    assert not re.search(r"rather\s+than|instead\s+of|we\s+(?:do|did|have)\s+not|we\s+cannot|不是|而非", rendered_prose, re.I)
-    assert r"4.5\% (Politics), 3.0\% (Crypto)" in tex
-    assert r"\AccountTop" in tex and r"\AccountPop" in tex and r"\AccountSE" in tex
-    labels=set(re.findall(r"\\label\{([^}]+)\}",tex))
-    refs=set(re.findall(r"\\(?:ref|eqref)\{([^}]+)\}",tex))
-    assert refs <= labels, refs-labels
-    cites={k.strip() for group in re.findall(r"\\cite\w*\{([^}]+)\}",tex) for k in group.split(",")}
-    bib=set(re.findall(r"@\w+\s*\{\s*([^,]+)",(ROOT/"paper/ref.bib").read_text()))
-    assert cites <= bib,cites-bib
-    figs=re.findall(r"\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}",tex)
-    expected_figures = {"measurement_timeline", "weights", "size_pricing", "clock_profile",
-                        "forward_prediction", "quote_validation", "proxy_sensitivity", "cross_platform"}
-    assert len(figs)==8 and set(figs)==expected_figures, figs
-    for name in figs:
-        assert (ROOT/"paper/figures"/(name+".pdf")).is_file(),name
-    extra={p.stem for p in (ROOT/"paper/figures").glob("*.pdf")}-set(figs)
-    assert extra == set(), extra
     joint = read("joint_flow_models.csv")
     assert len(joint) == 36
     predictions = read("joint_flow_predictions.csv")
@@ -95,6 +86,35 @@ def main():
     gradients=read("size_response_gradients.csv")
     for r in gradients:
         assert abs(float(r["PI_100"])-float(r["info"])-float(r["over_100"]))<1e-8
+    for p in (ROOT/"analysis").rglob("*.py"):
+        ast.parse(p.read_text(),filename=str(p))
+    if not (ROOT/"paper/main.tex").is_file():
+        write_sources()
+        print(f"PASS: {len(source)} source estimates, 21 headline tests, {len(eq)} equivalence tests, 36 common-market models, 24 supplementary coefficients. Manuscript files are not part of this repository.")
+        return
+    tex=(ROOT/"paper/main.tex").read_text()
+    assert not re.search(r"reviewer|earlier version|previous version|withdraw|no longer use|revised claim",tex,re.I)
+    assert not re.search(r"XXXX|AAMAS|Dublin|acmConference",tex)
+    rendered_prose = tex + "\n" + "\n".join(
+        (ROOT/"paper"/(name+".tex")).read_text()
+        for name in re.findall(r"\\input\{(tables/[^}]+)\}",tex))
+    assert not re.search(r"rather\s+than|instead\s+of|we\s+(?:do|did|have)\s+not|we\s+cannot|不是|而非", rendered_prose, re.I)
+    assert r"4.5\% (Politics), 3.0\% (Crypto)" in tex
+    assert r"\AccountTop" in tex and r"\AccountPop" in tex and r"\AccountSE" in tex
+    labels=set(re.findall(r"\\label\{([^}]+)\}",tex))
+    refs=set(re.findall(r"\\(?:ref|eqref)\{([^}]+)\}",tex))
+    assert refs <= labels, refs-labels
+    cites={k.strip() for group in re.findall(r"\\cite\w*\{([^}]+)\}",tex) for k in group.split(",")}
+    bib=set(re.findall(r"@\w+\s*\{\s*([^,]+)",(ROOT/"paper/ref.bib").read_text()))
+    assert cites <= bib,cites-bib
+    figs=re.findall(r"\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}",tex)
+    expected_figures = {"measurement_timeline", "weights", "size_pricing", "clock_profile",
+                        "forward_prediction", "quote_validation", "proxy_sensitivity", "cross_platform"}
+    assert len(figs)==8 and set(figs)==expected_figures, figs
+    for name in figs:
+        assert (ROOT/"paper/figures"/(name+".pdf")).is_file(),name
+    extra={p.stem for p in (ROOT/"paper/figures").glob("*.pdf")}-set(figs)
+    assert extra == set(), extra
     checks=r2_checks(tex)+v3_checks(tex)+editorial_checks(tex)+manuscript_checks(tex)+cross_platform_checks(tex)
     if "--layout" in sys.argv:
         aux=(ROOT/"paper/main.aux").read_text()
@@ -109,20 +129,7 @@ def main():
         assert total-body==4 and total==12, (body,total)
         assert body+1 <= page("paper:appendix_start") <= total
         print(f"Layout PASS: body pages 1-{body}; references and appendix {total-body} pages; total {total}.")
-    for p in (ROOT/"analysis").rglob("*.py"):
-        ast.parse(p.read_text(),filename=str(p))
-    # Validate manuscript inputs directly; the workspace also keeps historical analyses and templates.
-    rows=[]
-    for p in sorted(RES.rglob("*.csv")):
-        kind=("derived" if p.name.startswith(("paper_","robustness_matrix","joint_","weight_","size_response","account_persistence"))
-              else "event-data analysis (scripts 13b-17)" if p.name.startswith(("clk_","qv_","fp_","wb_F","repro_","audit_C_weights_YesNo"))
-              else "saved source summary")
-        rows.append(dict(file=str(p.relative_to(RES)),sha256=hashlib.sha256(p.read_bytes()).hexdigest(),kind=kind))
-    manifest=dict(raw_estimate_run_date="2026-10-14",event_data_rerun_date="2026-10-19",unit="probability bp unless specified in README.md",
-                  source_values_preserved=True,raw_data_rerun=False,
-                  canonical_sample_policy="observed_h100 for fixed-horizon claims; main for pre-trade metrics",
-                  files=rows)
-    (RES/"SOURCES.json").write_text(json.dumps(manifest,indent=2)+"\n")
+    write_sources()
     print(f"PASS: {len(source)} source estimates, 21 headline tests, {len(eq)} equivalence tests, 36 common-market models, 24 supplementary coefficients, {len(figs)} figures, {len(cites)} citation keys, {checks} clock/quote/fill/reproduction checks and source/structure checks.")
 
 
