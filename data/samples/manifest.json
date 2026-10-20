@@ -1,0 +1,79 @@
+{
+  "version": "2026-10-20",
+  "selection": {
+    "unit": "complete market across its available windows",
+    "stratification": "topic and binary outcome",
+    "order": "ascending SHA-256 of condition_id",
+    "max_markets_per_stratum": 100,
+    "eligibility": "paper window; >=20 window trades; observed small/large flow; 0.02<p_post<0.98",
+    "use": "demonstration; not a representative sample for reproducing population estimates"
+  },
+  "files": {
+    "polymarket_windows.csv": {
+      "source": "results/mkt_A_windows_YesNo.csv",
+      "kind": "market-window observations",
+      "rows": 4364,
+      "source_sha256": "6431430a48fcb2e18b459c661205d47d1beabed6cd0ff33788afd65d7a3b1a7f",
+      "sha256": "cf0723594ea01304420a5b5199fb6a8ae82ae01298c0d997bb2cbb5091e44aa6",
+      "markets": 1483,
+      "topic_outcome_markets": {
+        "Crypto|Y=0": 100,
+        "Crypto|Y=1": 100,
+        "Culture|Y=0": 86,
+        "Culture|Y=1": 83,
+        "Finance|Y=0": 100,
+        "Finance|Y=1": 100,
+        "Other|Y=0": 100,
+        "Other|Y=1": 100,
+        "Politics|Y=0": 100,
+        "Politics|Y=1": 100,
+        "Price Action|Y=0": 80,
+        "Price Action|Y=1": 73,
+        "Sci-Tech|Y=0": 63,
+        "Sci-Tech|Y=1": 100,
+        "Sports|Y=0": 100,
+        "Sports|Y=1": 98
+      }
+    },
+    "sports_moneyline_windows.csv": {
+      "source": "results/mkt_A_windows_SportsML.csv",
+      "kind": "market-window observations",
+      "rows": 600,
+      "source_sha256": "1dfee1e7102cdcc7c174ba451c94fa6eea5eb06e103a253bd77d8aaf048a4926",
+      "sha256": "332dba426a9849b84d97dfdba14f0904fa3b28dc317c42bc4a5557e7a540f673",
+      "markets": 200,
+      "topic_outcome_markets": {
+        "Sports|Y=0": 100,
+        "Sports|Y=1": 100
+      }
+    },
+    "heldout_predictions.csv": {
+      "source": "results/joint_flow_predictions.csv",
+      "kind": "saved out-of-fold predictions",
+      "rows": 5150,
+      "source_sha256": "d87ab9fbf8e403becf782d26f9c02c62cc3a51d87e45b8fca9e14bad3676735f",
+      "sha256": "a682ff2aaf67e3f136a64fba64783e1784b77a1f69d20a0e319a0b2049da3289"
+    },
+    "settlement_estimates.csv": {
+      "source": "results/paper_estimates.csv",
+      "kind": "saved estimates; not individual trades",
+      "rows": 130,
+      "source_sha256": "cbac8198e8ac0525624ee31e4d13b4b146514843252d136b8c96fafb64342bbd",
+      "sha256": "64cac44730e1d073a1dece735ee5709eb339a7b2e5d1a6ec06f8d67ee8dfd0ee"
+    },
+    "kalshi_margins.csv": {
+      "source": "results/k_B_margin.csv",
+      "kind": "saved cluster-level inference summaries; not individual trades",
+      "rows": 8,
+      "source_sha256": "9e7bdcd9e79c812d116f03ab1bb382282d605724eab7dc665006a170534ea489",
+      "sha256": "9e7bdcd9e79c812d116f03ab1bb382282d605724eab7dc665006a170534ea489"
+    },
+    "kalshi_predictions.csv": {
+      "source": "results/k_C_prediction.csv",
+      "kind": "saved predictions evaluated on separate cohorts",
+      "rows": 2,
+      "source_sha256": "2ca4f26f5577762eeadc4d596a60b4f590ce692c05185e62460b151e24e51390",
+      "sha256": "2ca4f26f5577762eeadc4d596a60b4f590ce692c05185e62460b151e24e51390"
+    }
+  }
+}

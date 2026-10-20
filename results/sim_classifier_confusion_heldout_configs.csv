@@ -1,0 +1,5 @@
+true,S1 order-flow learning,S2 public information,S3 inventory,S4 mixed
+S1 order-flow learning,7,0,3,2
+S2 public information,0,6,3,0
+S3 inventory,3,0,3,0
+S4 mixed,3,0,0,6

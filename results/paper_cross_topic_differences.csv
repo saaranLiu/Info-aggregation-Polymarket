@@ -1,0 +1,5 @@
+a,b,sample,metric,difference_bp,se_bp,p,assumption
+Politics,Crypto,observed_h100,over_100,86.69418579892333,51.29123847587001,0.09098323106839523,independent category-by-day clusters; exploratory
+Politics | s1 <$100,Crypto | s1 <$100,observed_h100,over_100,130.68901686003395,42.465152653563536,0.0020870345154220646,independent category-by-day clusters; exploratory
+Politics | s2 $100-1k,Crypto | s2 $100-1k,observed_h100,over_100,-81.62099350473304,123.64543704100537,0.5091759552669743,independent category-by-day clusters; exploratory
+Politics | s3 >=$1k,Crypto | s3 >=$1k,observed_h100,over_100,-448.391421671286,243.5447898074709,0.06560623841934243,independent category-by-day clusters; exploratory

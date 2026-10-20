@@ -1,0 +1,1175 @@
+{
+  "snapshot": "2026-10-20",
+  "scope": "Saved study results and deterministic demonstration samples; no raw transaction archive",
+  "files": [
+    {
+      "path": "data/samples/heldout_predictions.csv",
+      "bytes": 1298035,
+      "sha256": "a682ff2aaf67e3f136a64fba64783e1784b77a1f69d20a0e319a0b2049da3289",
+      "rows": 5150,
+      "columns": 15
+    },
+    {
+      "path": "data/samples/kalshi_margins.csv",
+      "bytes": 896,
+      "sha256": "9e7bdcd9e79c812d116f03ab1bb382282d605724eab7dc665006a170534ea489",
+      "rows": 8,
+      "columns": 8
+    },
+    {
+      "path": "data/samples/kalshi_predictions.csv",
+      "bytes": 286,
+      "sha256": "2ca4f26f5577762eeadc4d596a60b4f590ce692c05185e62460b151e24e51390",
+      "rows": 2,
+      "columns": 7
+    },
+    {
+      "path": "data/samples/polymarket_windows.csv",
+      "bytes": 913044,
+      "sha256": "cf0723594ea01304420a5b5199fb6a8ae82ae01298c0d997bb2cbb5091e44aa6",
+      "rows": 4364,
+      "columns": 12
+    },
+    {
+      "path": "data/samples/settlement_estimates.csv",
+      "bytes": 18631,
+      "sha256": "64cac44730e1d073a1dece735ee5709eb339a7b2e5d1a6ec06f8d67ee8dfd0ee",
+      "rows": 130,
+      "columns": 10
+    },
+    {
+      "path": "data/samples/sports_moneyline_windows.csv",
+      "bytes": 122517,
+      "sha256": "332dba426a9849b84d97dfdba14f0904fa3b28dc317c42bc4a5557e7a540f673",
+      "rows": 600,
+      "columns": 12
+    },
+    {
+      "path": "results/account_persistence_summary.csv",
+      "bytes": 815,
+      "sha256": "cce9470eeb9dbbe62fbd1b88cb6475d2d8f0e312544cd50aa3dbde387f1ff129",
+      "rows": 2,
+      "columns": 20
+    },
+    {
+      "path": "results/acct_A_splithalf_SportsML.csv",
+      "bytes": 1538,
+      "sha256": "578b08b49a777050ab99b5f230dadae58ed243c024391355a7ac7898634b31e8",
+      "rows": 6,
+      "columns": 14
+    },
+    {
+      "path": "results/acct_A_splithalf_YesNo.csv",
+      "bytes": 1513,
+      "sha256": "683366d1177845532dbe55219840ed31975be3bbbe36d0efb47e607830dd7e46",
+      "rows": 6,
+      "columns": 14
+    },
+    {
+      "path": "results/acct_B_topdecile_SportsML.csv",
+      "bytes": 687,
+      "sha256": "f32136fe5d5c0477b60ff5cda75ecd55dec5f00d93c519b04fe5cecb48f4d58b",
+      "rows": 6,
+      "columns": 9
+    },
+    {
+      "path": "results/acct_B_topdecile_YesNo.csv",
+      "bytes": 649,
+      "sha256": "a0b7d52115b6b21d92c8ee6380d60d563f9ab3c5a2bb5d58f1001beed60a403b",
+      "rows": 6,
+      "columns": 9
+    },
+    {
+      "path": "results/anchor_A_annotation_markets.csv",
+      "bytes": 15265592,
+      "sha256": "a56c1b744153d424b40c84f9d3095213e06d1c6fc1fce609074e001fa978f7e2",
+      "rows": 91471,
+      "columns": 7
+    },
+    {
+      "path": "results/anchor_A_counts.csv",
+      "bytes": 4647,
+      "sha256": "38aa931be4468aedefc66e710281a8d02475044cbb81b7365acfefd335cfe87c",
+      "rows": 33,
+      "columns": 9
+    },
+    {
+      "path": "results/anchor_A_examples.csv",
+      "bytes": 6203,
+      "sha256": "4707ccdad5fb1ee7ac02ad7a4128e77eaeb93f2f5d3c85ff401988b1a691dc34",
+      "rows": 37,
+      "columns": 3
+    },
+    {
+      "path": "results/anchor_B_bysize.csv",
+      "bytes": 1716,
+      "sha256": "d84b519534fe44de5b099b8f3684f501b4aca1f275fc1d2e21424132fa91359f",
+      "rows": 24,
+      "columns": 6
+    },
+    {
+      "path": "results/anchor_B_regressions.csv",
+      "bytes": 6641,
+      "sha256": "d9b2e76e83bfe4be61a921a5c2228bf20fa4b4de7763f19492697b8a0eb2f50d",
+      "rows": 64,
+      "columns": 9
+    },
+    {
+      "path": "results/audit_A_sample_flow.csv",
+      "bytes": 3328,
+      "sha256": "3ae7a75a322eb219500f2da531855f06c4d2aa2f1bbe47fc3d7cc6ffe817f9a1",
+      "rows": 36,
+      "columns": 7
+    },
+    {
+      "path": "results/audit_B_merge_OverUnder.csv",
+      "bytes": 292,
+      "sha256": "83c4d80788cf1250efe4801d43ba547db4f46d1f07a63e6e7c1465efe66c6c45",
+      "rows": 1,
+      "columns": 9
+    },
+    {
+      "path": "results/audit_B_merge_SportsML.csv",
+      "bytes": 290,
+      "sha256": "ab5b45edb7dc1f00307bc731f384df5536844eda5c22f70ca798c19feb52c398",
+      "rows": 1,
+      "columns": 9
+    },
+    {
+      "path": "results/audit_B_merge_YesNo.csv",
+      "bytes": 289,
+      "sha256": "6349b5a6ae8401cbe8dad8a415af9620344929a284bebe843443dea40472b7b7",
+      "rows": 1,
+      "columns": 9
+    },
+    {
+      "path": "results/audit_B_merge_dispersion_YesNo.csv",
+      "bytes": 287,
+      "sha256": "1b8178a1dd67a49b0007e52a4a19fd14476cbe8aea2f24310d04348649fd4255",
+      "rows": 1,
+      "columns": 7
+    },
+    {
+      "path": "results/audit_B_merge_metrics_YesNo.csv",
+      "bytes": 2474,
+      "sha256": "7d80ac6dd548cddaeb49ea6b6652bd5c69b8617158b881b54e998157c7594291",
+      "rows": 15,
+      "columns": 11
+    },
+    {
+      "path": "results/audit_C_weights_OverUnder.csv",
+      "bytes": 7604,
+      "sha256": "b2e8ba789c81f0a0eeee058c0746c245bd5cbcfaf8d553d675616ebc93ed83f9",
+      "rows": 32,
+      "columns": 14
+    },
+    {
+      "path": "results/audit_C_weights_SportsML.csv",
+      "bytes": 7450,
+      "sha256": "3b8bd9935088e724207323fdd589978183b9197d0d27828bf26c9e5e5986a1a8",
+      "rows": 32,
+      "columns": 14
+    },
+    {
+      "path": "results/audit_C_weights_YesNo.csv",
+      "bytes": 23580,
+      "sha256": "b9da8bf6fbb9cc46a39a047a2fddd8aabac2fadb06862927c1efc95bbf1f0da2",
+      "rows": 96,
+      "columns": 16
+    },
+    {
+      "path": "results/audit_C_weights_YesNo_constructed_u_over_p.csv",
+      "bytes": 22467,
+      "sha256": "e3fa0d0fce485f92f56e134c34c9c5a5af32832cdfbec673d204fa3324a14011",
+      "rows": 96,
+      "columns": 15
+    },
+    {
+      "path": "results/audit_D_horizon_OverUnder.csv",
+      "bytes": 634,
+      "sha256": "645997c18fddae3da79e7de0ad106dccbedadb9ea36ae168896f6768c4ed2eca",
+      "rows": 5,
+      "columns": 7
+    },
+    {
+      "path": "results/audit_D_horizon_SportsML.csv",
+      "bytes": 185,
+      "sha256": "379c5abc1a2539c57ccd1ec70544566a5b9f76a7fb230be787de73a468ad26bd",
+      "rows": 1,
+      "columns": 7
+    },
+    {
+      "path": "results/audit_D_horizon_YesNo.csv",
+      "bytes": 943,
+      "sha256": "60cf8c1591d3a390732a6e6eace380a1d24889a05e35d343feffd93ff34ec610",
+      "rows": 8,
+      "columns": 7
+    },
+    {
+      "path": "results/audit_D_horizon_metrics_OverUnder.csv",
+      "bytes": 1586,
+      "sha256": "c4b1c73cd96570c3460290a577733370bafc795a7541208861b8b4ec9243cb5e",
+      "rows": 9,
+      "columns": 11
+    },
+    {
+      "path": "results/audit_D_horizon_metrics_SportsML.csv",
+      "bytes": 1585,
+      "sha256": "6e14c05bec79fb5682294891360389628b05a642b52440841cf9054e4a4a43d2",
+      "rows": 9,
+      "columns": 11
+    },
+    {
+      "path": "results/audit_D_horizon_metrics_YesNo.csv",
+      "bytes": 1534,
+      "sha256": "66cd6523373c497c6d4461ac8a206fe1cba14acc9bf5d412d9857e9f8271150c",
+      "rows": 9,
+      "columns": 11
+    },
+    {
+      "path": "results/audit_D_horizon_selection_OverUnder.csv",
+      "bytes": 1075,
+      "sha256": "ac9c93ad1f9c51c6a56b614acd372ce4d2af1ab9df7ba36c463052b619ad8c1c",
+      "rows": 15,
+      "columns": 6
+    },
+    {
+      "path": "results/audit_D_horizon_selection_SportsML.csv",
+      "bytes": 1074,
+      "sha256": "09ee43957f4f958e2e441d219061113fd10c1c65a5bef69299b6994f449bc688",
+      "rows": 15,
+      "columns": 6
+    },
+    {
+      "path": "results/audit_D_horizon_selection_YesNo.csv",
+      "bytes": 1049,
+      "sha256": "50bc230c02d051f4bb843fc6beab79c7c92175c5fe158cede8356d4853199c1e",
+      "rows": 15,
+      "columns": 6
+    },
+    {
+      "path": "results/audit_D_midafter_OverUnder.csv",
+      "bytes": 562,
+      "sha256": "50210932bf656d322ebbbfe1b3980a6ac56e8d77c3483b8cda1c5f394c56528e",
+      "rows": 3,
+      "columns": 9
+    },
+    {
+      "path": "results/audit_D_midafter_SportsML.csv",
+      "bytes": 569,
+      "sha256": "ab06faa2628959fe369b3df0ad9b4c8c0bba095b952fda079df08f29496da893",
+      "rows": 3,
+      "columns": 9
+    },
+    {
+      "path": "results/audit_D_midafter_YesNo.csv",
+      "bytes": 566,
+      "sha256": "54bf4ff7b317cc1b983ee4ed868807b98fca40bfa3c985c420932135c4be7f82",
+      "rows": 3,
+      "columns": 9
+    },
+    {
+      "path": "results/audit_E_lastmid_OverUnder.csv",
+      "bytes": 263,
+      "sha256": "6b2fefe6392803ea027d9c86851822ea02efb4f3f3b2047e8f421aadc2532345",
+      "rows": 1,
+      "columns": 8
+    },
+    {
+      "path": "results/audit_E_lastmid_SportsML.csv",
+      "bytes": 267,
+      "sha256": "48a58fa159ec73c7d09fa6508dff614293c91ce5380fa3781a7fb2ef5664437b",
+      "rows": 1,
+      "columns": 8
+    },
+    {
+      "path": "results/audit_E_lastmid_YesNo.csv",
+      "bytes": 246,
+      "sha256": "40df98ee107fd06daa29bff17eb1f14330c0a5f2feb0c2a27a65a5cbc3b087b2",
+      "rows": 1,
+      "columns": 8
+    },
+    {
+      "path": "results/audit_F_timeaxis_OverUnder.csv",
+      "bytes": 2669,
+      "sha256": "5cb77c7830f42e5d06522a7820541e4ec8a4477847921f00a898cfdd522ddd14",
+      "rows": 15,
+      "columns": 11
+    },
+    {
+      "path": "results/audit_F_timeaxis_SportsML.csv",
+      "bytes": 2662,
+      "sha256": "5c1d3e55543397b61bb26aad9a64902c27d5d1eb2942e5fdb2837cf3ad8deec8",
+      "rows": 15,
+      "columns": 11
+    },
+    {
+      "path": "results/audit_F_timeaxis_YesNo.csv",
+      "bytes": 7824,
+      "sha256": "786b99e74bf020ab4ce07ab067d63100b9c166ad2352c73d3ea349c60ba8ccd7",
+      "rows": 45,
+      "columns": 12
+    },
+    {
+      "path": "results/audit_F_timeaxis_dist_OverUnder.csv",
+      "bytes": 187,
+      "sha256": "001c93065b4c8d4e1866c7dcd87700184f72b40cfdb11261ca0c64448b01dfe6",
+      "rows": 1,
+      "columns": 6
+    },
+    {
+      "path": "results/audit_F_timeaxis_dist_SportsML.csv",
+      "bytes": 193,
+      "sha256": "6ac2e084c0c5939fac9e6cb8fb61293a3ec94a8047ebca5d435b8ec3a0f3aa1b",
+      "rows": 1,
+      "columns": 6
+    },
+    {
+      "path": "results/audit_F_timeaxis_dist_YesNo.csv",
+      "bytes": 229,
+      "sha256": "8f778f617028e8dce528f9278329b5d3a35f7532814a29a9cf10367e2cfd7418",
+      "rows": 1,
+      "columns": 6
+    },
+    {
+      "path": "results/audit_G_pricefilter_OverUnder.csv",
+      "bytes": 14509,
+      "sha256": "24d674e4a590822fbe0a6744d17bf804343e82ac9dcf5a8eae34e3cb50fbe75d",
+      "rows": 84,
+      "columns": 12
+    },
+    {
+      "path": "results/audit_G_pricefilter_SportsML.csv",
+      "bytes": 14539,
+      "sha256": "f4777493417fe13b947d15fab5ebfef6549cebbec0f5098cc16764715eaf55a8",
+      "rows": 84,
+      "columns": 12
+    },
+    {
+      "path": "results/audit_G_pricefilter_YesNo.csv",
+      "bytes": 14122,
+      "sha256": "d52f88722e489589890ebc378a56304ba056108818d07d96879fcfb65183cf62",
+      "rows": 84,
+      "columns": 12
+    },
+    {
+      "path": "results/clk_A_cells.csv",
+      "bytes": 55261,
+      "sha256": "8e70d876e126f911f546b3ceba15d9c812df3481cf57b1a51534e272e9098324",
+      "rows": 468,
+      "columns": 10
+    },
+    {
+      "path": "results/clk_B_sample.csv",
+      "bytes": 513,
+      "sha256": "556599665d86d7be1824599564f4ff7995801c4fe7fb5312181745fac843c1ec",
+      "rows": 8,
+      "columns": 7
+    },
+    {
+      "path": "results/clk_C_forward.csv",
+      "bytes": 18607,
+      "sha256": "9d95c62bd683a245938366e3294a2df8a020de601ed6bfbc79a519533f953580",
+      "rows": 180,
+      "columns": 10
+    },
+    {
+      "path": "results/clk_D_forward_pred.csv",
+      "bytes": 9913,
+      "sha256": "84336c4513c92c222e04ff5fb5a0fe57f7b16a350a98b1b11b29aa5717dcde65",
+      "rows": 56,
+      "columns": 16
+    },
+    {
+      "path": "results/clk_E_diff.csv",
+      "bytes": 2198,
+      "sha256": "bc35b6c2c40d5c706da040882bb38437d028803a2b49b0f6e4d0dff67d83d866",
+      "rows": 20,
+      "columns": 7
+    },
+    {
+      "path": "results/con_A_concentration.csv",
+      "bytes": 996,
+      "sha256": "fee155b8ad33fd08472276fa72094c37a00dab8121996cdf92a0573bb8433bed",
+      "rows": 6,
+      "columns": 10
+    },
+    {
+      "path": "results/con_B_side.csv",
+      "bytes": 700,
+      "sha256": "a29dabee3fd14aa7768f45322e6a34a565fa1a1bc7766d9f6ef6b0eec07d9a54",
+      "rows": 18,
+      "columns": 4
+    },
+    {
+      "path": "results/con_C_politics_dates.csv",
+      "bytes": 545,
+      "sha256": "1ca5845f3a4d359843e87de0059ab4fd8e24d958fec976a142478046d09b9467",
+      "rows": 8,
+      "columns": 4
+    },
+    {
+      "path": "results/ctl_A_residual_controls.csv",
+      "bytes": 693,
+      "sha256": "7e85aab2838dd1488bf11342c17c4fa3d8e38866b8f07b7052d50f7dfd819308",
+      "rows": 6,
+      "columns": 6
+    },
+    {
+      "path": "results/ctr_A_contrasts.csv",
+      "bytes": 2968,
+      "sha256": "4834b056c8abb4b2401d592f39375493bdb289c2c934ccde25b000769acc82e9",
+      "rows": 25,
+      "columns": 9
+    },
+    {
+      "path": "results/d1_A_alignment.csv",
+      "bytes": 654,
+      "sha256": "f4283a3300b8292b8e78daa08c889b50aa56a17cfa0b5b9ecb75752a8c36b6df",
+      "rows": 13,
+      "columns": 4
+    },
+    {
+      "path": "results/d1_B_metrics.csv",
+      "bytes": 4956,
+      "sha256": "70786f03a186e8b1c4567554fdffdcb758551bb431214ae15d5a25935d978900",
+      "rows": 56,
+      "columns": 8
+    },
+    {
+      "path": "results/d1_C_coverage.csv",
+      "bytes": 115,
+      "sha256": "9d3e42c4f7156ba6d8deda52f70d838b49ba5527a4859ff9f542ec45af7a11fc",
+      "rows": 1,
+      "columns": 6
+    },
+    {
+      "path": "results/d1_D_pmxt_overlap.csv",
+      "bytes": 122,
+      "sha256": "3ae5c4a061b71ff8d3ba806966d0b82fbb896a619da602298ff7b51c16e357ef",
+      "rows": 1,
+      "columns": 6
+    },
+    {
+      "path": "results/d5_A_coverage.csv",
+      "bytes": 114,
+      "sha256": "096e0ed6abb0fe79584684fc56d51872b1c6d9c2ec93ff22fbef0eb68ab30dd3",
+      "rows": 2,
+      "columns": 5
+    },
+    {
+      "path": "results/d5_B_candle_days.csv",
+      "bytes": 827,
+      "sha256": "b23481fd04a511f8543d4f4b317a0537988cb2f57f0c45b609d741f9540f6d7c",
+      "rows": 56,
+      "columns": 2
+    },
+    {
+      "path": "results/d5_B_clocks.csv",
+      "bytes": 112,
+      "sha256": "c847606760359d20dfa458d22fc10c17b26590b62d9fff94b5b719601cdd8c55",
+      "rows": 1,
+      "columns": 5
+    },
+    {
+      "path": "results/d5_B_leadlag.csv",
+      "bytes": 114,
+      "sha256": "024ff7a5e445c7eed7d41ff476e6196196e29dfd4283d0685bab84597d27603e",
+      "rows": 1,
+      "columns": 6
+    },
+    {
+      "path": "results/d5_C_short_pred.csv",
+      "bytes": 325,
+      "sha256": "c9351139cb6ef8231b0d330a1c56ba061f4f7938feec2492778f469b340dd6a7",
+      "rows": 3,
+      "columns": 7
+    },
+    {
+      "path": "results/d5_C_short_rows.csv",
+      "bytes": 58746,
+      "sha256": "80bd679fcf34723daa61b2501d3347d4dc6fc538ea3b47613e4a5feefcd0a45d",
+      "rows": 499,
+      "columns": 5
+    },
+    {
+      "path": "results/d5_D_coverage.csv",
+      "bytes": 44,
+      "sha256": "c954775b6e2cb3771386992f386ab038bca4993b99cc6cba8109ad0645c62a64",
+      "rows": 1,
+      "columns": 3
+    },
+    {
+      "path": "results/d6_A_coverage.csv",
+      "bytes": 127,
+      "sha256": "04710168d4f409bbad6a6eeda141245651d55def120dfdddb959a093af71f4cf",
+      "rows": 1,
+      "columns": 3
+    },
+    {
+      "path": "results/d6_B_prediction.csv",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "rows": 0,
+      "columns": 0
+    },
+    {
+      "path": "results/descriptive/quote_YesNo_driftshare_mid.csv",
+      "bytes": 669,
+      "sha256": "06518332cf97500b4487ee7c02ba849a2a6ef0b3437eab7030590020b1949190",
+      "rows": 10,
+      "columns": 6
+    },
+    {
+      "path": "results/descriptive/quote_YesNo_pairs_mid.csv",
+      "bytes": 4380,
+      "sha256": "24606409aebbe939937ef79758030eabe53a78006eb4c2a9c358497524ada80d",
+      "rows": 30,
+      "columns": 11
+    },
+    {
+      "path": "results/dir_A_agreement.csv",
+      "bytes": 535,
+      "sha256": "901ddc28b02331ce7e044cdcb87d66001d75e8c2665a880dbf1b1ec632b10c95",
+      "rows": 5,
+      "columns": 6
+    },
+    {
+      "path": "results/dir_B_metrics.csv",
+      "bytes": 2989,
+      "sha256": "5e7f9032d8f4af38640b05034411093ed3852c992a7bfaf7678358dc0d1f80e3",
+      "rows": 24,
+      "columns": 9
+    },
+    {
+      "path": "results/dir_C_order.csv",
+      "bytes": 363,
+      "sha256": "4b09935ffbda7f52b0547703b93b90efd45aed32fdd57e6d993041036bf50fc9",
+      "rows": 3,
+      "columns": 7
+    },
+    {
+      "path": "results/fp_A_price_gap.csv",
+      "bytes": 1363,
+      "sha256": "bdaae1c74bc02b4d6eec9535c6f4e12494506b20d3f04dc9eedf74c55e917382",
+      "rows": 9,
+      "columns": 9
+    },
+    {
+      "path": "results/fp_B_metrics.csv",
+      "bytes": 11024,
+      "sha256": "5740a688209cd794f7bd598b609313e40fbf2480bf9f05a00d638b0da7d18ab5",
+      "rows": 80,
+      "columns": 10
+    },
+    {
+      "path": "results/inf_A_clusters_OverUnder.csv",
+      "bytes": 2928,
+      "sha256": "251ab94fa834fdbeeb082012ea579f73062ba315a20a2ccc074fa6dc6aaae923",
+      "rows": 20,
+      "columns": 13
+    },
+    {
+      "path": "results/inf_A_clusters_SportsML.csv",
+      "bytes": 2972,
+      "sha256": "fefed281543da43d8de65eefce921be166d06b0688251b4e888c737e67550d64",
+      "rows": 20,
+      "columns": 13
+    },
+    {
+      "path": "results/inf_A_clusters_YesNo.csv",
+      "bytes": 7249,
+      "sha256": "d32de73f3e0dcad811d2552cf95dc549cca669b3884094f588154f467e2ff0f2",
+      "rows": 50,
+      "columns": 13
+    },
+    {
+      "path": "results/inf_A_horizon_samples.csv",
+      "bytes": 12742,
+      "sha256": "a1e0014bb357ecec3760b1123d44a7adbab073e21c7869b9ded236b6bccd1778",
+      "rows": 130,
+      "columns": 9
+    },
+    {
+      "path": "results/inf_B_perm_Y_OverUnder.csv",
+      "bytes": 490,
+      "sha256": "b68c7532c060d5c42b97dcac09ec04457671bd9229b445d9fa056695bad5842e",
+      "rows": 3,
+      "columns": 10
+    },
+    {
+      "path": "results/inf_B_perm_Y_SportsML.csv",
+      "bytes": 479,
+      "sha256": "0967c8ea06cec3d9f3db5980f69fadf6148ffe7de69d4afcce5412f2ff4a79a3",
+      "rows": 3,
+      "columns": 10
+    },
+    {
+      "path": "results/inf_B_perm_Y_YesNo.csv",
+      "bytes": 1258,
+      "sha256": "5d9d10f1c2f45a00bd9312854ae8f30aa419578c4e16a7f83c22bbe944643bf6",
+      "rows": 9,
+      "columns": 10
+    },
+    {
+      "path": "results/inf_B_perm_runs_OverUnder.csv",
+      "bytes": 201,
+      "sha256": "c476c63c057c99e3915e39961eafa95eb4f810990d0090ee2a7f482403c26c74",
+      "rows": 1,
+      "columns": 8
+    },
+    {
+      "path": "results/inf_B_perm_runs_SportsML.csv",
+      "bytes": 199,
+      "sha256": "345f9f85ecdbc30009b79184c41ebfd3a90cddaccd804bd99556248e47c94614",
+      "rows": 1,
+      "columns": 8
+    },
+    {
+      "path": "results/inf_B_perm_runs_YesNo.csv",
+      "bytes": 192,
+      "sha256": "b058fc37cfaf7e5e25670f7e199876778eaff2a46d77cf536d2de2ca9d29811b",
+      "rows": 1,
+      "columns": 8
+    },
+    {
+      "path": "results/joint_flow_coefficients.csv",
+      "bytes": 2789,
+      "sha256": "c8218211ece82182de8db2acfccecbd52b63c30dd0f3af0ed218a12a9a32ee01",
+      "rows": 24,
+      "columns": 8
+    },
+    {
+      "path": "results/joint_flow_models.csv",
+      "bytes": 8634,
+      "sha256": "eb192fe32d2768365ed63614a3bf50289db8553225618872ac121761e3d57eb5",
+      "rows": 36,
+      "columns": 15
+    },
+    {
+      "path": "results/joint_flow_predictions.csv",
+      "bytes": 10609126,
+      "sha256": "d87ab9fbf8e403becf782d26f9c02c62cc3a51d87e45b8fca9e14bad3676735f",
+      "rows": 42251,
+      "columns": 15
+    },
+    {
+      "path": "results/k_A_sample.csv",
+      "bytes": 190,
+      "sha256": "f4c87b5a5b230e757bb0abbb92c194652d2b7fad6d6e2573ef5ca7c06b7c392f",
+      "rows": 1,
+      "columns": 8
+    },
+    {
+      "path": "results/k_B_margin.csv",
+      "bytes": 896,
+      "sha256": "9e7bdcd9e79c812d116f03ab1bb382282d605724eab7dc665006a170534ea489",
+      "rows": 8,
+      "columns": 8
+    },
+    {
+      "path": "results/k_C_prediction.csv",
+      "bytes": 286,
+      "sha256": "2ca4f26f5577762eeadc4d596a60b4f590ce692c05185e62460b151e24e51390",
+      "rows": 2,
+      "columns": 7
+    },
+    {
+      "path": "results/k_D_participation_comparison.csv",
+      "bytes": 288,
+      "sha256": "f54cc82bdae4689f99a14e711004a5eb422e13f813af95bcb8f0e1d25596c694",
+      "rows": 6,
+      "columns": 4
+    },
+    {
+      "path": "results/k_E_margin_comparison.csv",
+      "bytes": 1002,
+      "sha256": "69c40af294e074dc2329c284afe00410b8ce5a4222834dee9c35b50e44734272",
+      "rows": 9,
+      "columns": 8
+    },
+    {
+      "path": "results/mkt_A_windows_SportsML.csv",
+      "bytes": 11207310,
+      "sha256": "1dfee1e7102cdcc7c174ba451c94fa6eea5eb06e103a253bd77d8aaf048a4926",
+      "rows": 60918,
+      "columns": 12
+    },
+    {
+      "path": "results/mkt_A_windows_YesNo.csv",
+      "bytes": 11569324,
+      "sha256": "6431430a48fcb2e18b459c661205d47d1beabed6cd0ff33788afd65d7a3b1a7f",
+      "rows": 56533,
+      "columns": 12
+    },
+    {
+      "path": "results/mkt_B_regressions.csv",
+      "bytes": 29802,
+      "sha256": "287a99a2917ef28fb834e262ea70c66cf1dbebca57408aa0aabd47ad4cf52c15",
+      "rows": 138,
+      "columns": 15
+    },
+    {
+      "path": "results/paper_cross_topic_differences.csv",
+      "bytes": 711,
+      "sha256": "ddb6a6fe46ce7a1ec7caea59da0691f8276f8e330b0855ebacad07d2507d9f33",
+      "rows": 4,
+      "columns": 8
+    },
+    {
+      "path": "results/paper_equivalence.csv",
+      "bytes": 3727,
+      "sha256": "825688e04f9a27bd6714ee45b72da6b641d62bda1d53eabcefe284b2c90be78a",
+      "rows": 26,
+      "columns": 10
+    },
+    {
+      "path": "results/paper_estimates.csv",
+      "bytes": 18762,
+      "sha256": "cbac8198e8ac0525624ee31e4d13b4b146514843252d136b8c96fafb64342bbd",
+      "rows": 130,
+      "columns": 10
+    },
+    {
+      "path": "results/paper_headline_tests.csv",
+      "bytes": 2434,
+      "sha256": "c1fb2ec5235d417151499a787631e3a973cb0bfd900b40539f1d0c302d15035c",
+      "rows": 21,
+      "columns": 8
+    },
+    {
+      "path": "results/proxy_A_consistency_OverUnder.csv",
+      "bytes": 1244,
+      "sha256": "0bcfca9b5e92e33ee1c8f3e1dd788725382dba09500196299a6cba7592971240",
+      "rows": 4,
+      "columns": 17
+    },
+    {
+      "path": "results/proxy_A_consistency_SportsML.csv",
+      "bytes": 1234,
+      "sha256": "3ba8b49a935d793a5e3499848da1c25fc7bc5d0936a8d2279a9ef58df1c6ffb0",
+      "rows": 4,
+      "columns": 17
+    },
+    {
+      "path": "results/proxy_A_consistency_YesNo.csv",
+      "bytes": 2475,
+      "sha256": "b12756df36aebc9b3cad69bdd62068931f7e2da201e61be2de014f17f439d41b",
+      "rows": 9,
+      "columns": 17
+    },
+    {
+      "path": "results/proxy_B_variants_OverUnder.csv",
+      "bytes": 29825,
+      "sha256": "b07dadea1ac901634a0072c93e0f4778dd97a866e0f352a1873902750a76949a",
+      "rows": 160,
+      "columns": 13
+    },
+    {
+      "path": "results/proxy_B_variants_SportsML.csv",
+      "bytes": 29908,
+      "sha256": "835e3f61ad753f80b5583bcd4893dbdbfbbfcfda4033f37fea8544b57e9d4005",
+      "rows": 160,
+      "columns": 13
+    },
+    {
+      "path": "results/proxy_B_variants_YesNo.csv",
+      "bytes": 67886,
+      "sha256": "789dcb08c429b6c51f1cef3a709a0b973e30323e1c30af47e3de3138d502ea70",
+      "rows": 360,
+      "columns": 13
+    },
+    {
+      "path": "results/proxy_C_momentum_OverUnder.csv",
+      "bytes": 881,
+      "sha256": "5483b6e24fe62c335c5926851ae5a638b66a030289c01d6ba35afbaedd312e5f",
+      "rows": 4,
+      "columns": 12
+    },
+    {
+      "path": "results/proxy_C_momentum_SportsML.csv",
+      "bytes": 870,
+      "sha256": "d4880cfedf9423548283c5f44ee48a77d47c1f0686bfe0bbc29590e9a95036e3",
+      "rows": 4,
+      "columns": 12
+    },
+    {
+      "path": "results/proxy_C_momentum_YesNo.csv",
+      "bytes": 861,
+      "sha256": "b6bd306c0d1b67ee87bc5866806e976ccf5621d2606c5c7e249a45fc1badf44a",
+      "rows": 4,
+      "columns": 12
+    },
+    {
+      "path": "results/proxy_D_bound_OverUnder.csv",
+      "bytes": 655,
+      "sha256": "aa5dee46bc4b39ef1b70943d13d6eb1ff43b069b0b50ebefb51cb156b010a748",
+      "rows": 3,
+      "columns": 12
+    },
+    {
+      "path": "results/proxy_D_bound_SportsML.csv",
+      "bytes": 655,
+      "sha256": "6dc602689ce404572d2b026b0f66bd9afc9c67491d023f764a61805e785cfa0c",
+      "rows": 3,
+      "columns": 12
+    },
+    {
+      "path": "results/proxy_D_bound_YesNo.csv",
+      "bytes": 4410,
+      "sha256": "af2710226b333ffa49d54355bd43e8a6d16687bf9e24a4be95018731eb1c42a8",
+      "rows": 24,
+      "columns": 12
+    },
+    {
+      "path": "results/qv_A_alignment.csv",
+      "bytes": 1458,
+      "sha256": "1ed986a8fd9a9e0a02d077ec4ecaedb8da25d509bc5b77b84e7df74cbfef4079",
+      "rows": 13,
+      "columns": 7
+    },
+    {
+      "path": "results/qv_B_error.csv",
+      "bytes": 4857,
+      "sha256": "73f9d92b20a88078ffd2e1e03056cefcd55481df9470aca0f2758fc0a317647c",
+      "rows": 18,
+      "columns": 15
+    },
+    {
+      "path": "results/qv_C_reg.csv",
+      "bytes": 753,
+      "sha256": "4c4d4418606ec5c7d95e51631b2fed23e0215c4be13fe614fe45c20e0b8885c6",
+      "rows": 9,
+      "columns": 5
+    },
+    {
+      "path": "results/qv_D_metrics.csv",
+      "bytes": 47594,
+      "sha256": "089cc0b7744882f3fbba23083253e78b57461745ec512bbe167525c5ac3e7e45",
+      "rows": 286,
+      "columns": 12
+    },
+    {
+      "path": "results/qv_E_wb.csv",
+      "bytes": 3392,
+      "sha256": "081c4fa37fd62abee554cf7a9f17262a61d7ab7402ff6c7324afa9037d8c7e7e",
+      "rows": 24,
+      "columns": 10
+    },
+    {
+      "path": "results/qv_F_coverage.csv",
+      "bytes": 374,
+      "sha256": "7e4361acf97e995105e5e00b01b1876f6300cdfe1315ceb5ba03db4109032981",
+      "rows": 8,
+      "columns": 8
+    },
+    {
+      "path": "results/qv_G_days.csv",
+      "bytes": 246,
+      "sha256": "1e39a62228af88cfe8f800c10085b6e2e7da0aee28afa2a458cb4e4022acc5df",
+      "rows": 22,
+      "columns": 1
+    },
+    {
+      "path": "results/qv_H_recorded.csv",
+      "bytes": 1210,
+      "sha256": "95a9a77e0e52824f56696d69c623423a231cdd68abc8e12e509352378f4ca5e0",
+      "rows": 8,
+      "columns": 10
+    },
+    {
+      "path": "results/repro_anchor_class_by_topic.csv",
+      "bytes": 208,
+      "sha256": "57d40cad627af93ede323cdb2b30bf2b680743003b4f20cf7051d1da896b135f",
+      "rows": 5,
+      "columns": 9
+    },
+    {
+      "path": "results/repro_anchor_rules.csv",
+      "bytes": 3817,
+      "sha256": "104f2f9706fa2654401b029df83fb00b60abb0953ccab95d3ac3129831e858d2",
+      "rows": 11,
+      "columns": 6
+    },
+    {
+      "path": "results/repro_sim_common.csv",
+      "bytes": 930,
+      "sha256": "e211ab5cf052c4fc7c5c1e3d86113f4befa3cc08a8c6f1f8af5bb9b25853b198",
+      "rows": 14,
+      "columns": 2
+    },
+    {
+      "path": "results/repro_sim_grid.csv",
+      "bytes": 1878,
+      "sha256": "e8b0bbe1c9ed18abd78b0ea7da90bba24bdfda1a799edb644e1174ea3ea96aa4",
+      "rows": 34,
+      "columns": 10
+    },
+    {
+      "path": "results/ret_A_dollars_SportsML.csv",
+      "bytes": 574,
+      "sha256": "ceddb300991f001c640d8a5c9f5ba31823d0e6c402b089f46c85217bcc61f19a",
+      "rows": 4,
+      "columns": 9
+    },
+    {
+      "path": "results/ret_A_dollars_YesNo.csv",
+      "bytes": 1568,
+      "sha256": "58cf66a0414f234e3b0637de36dad60f134c07c4d28913ae402c71157dcb625e",
+      "rows": 12,
+      "columns": 9
+    },
+    {
+      "path": "results/ret_A_retention.csv",
+      "bytes": 1060,
+      "sha256": "7407050c0939f7311f73911d4570481db228e5c4ef7edbb66a320d0c324f2d63",
+      "rows": 6,
+      "columns": 11
+    },
+    {
+      "path": "results/ret_A_weights_SportsML.csv",
+      "bytes": 10223,
+      "sha256": "81e842375a3e6b2870161cf5568f610b63eb13cebcf8a4d3ed998acbb95416d4",
+      "rows": 60,
+      "columns": 13
+    },
+    {
+      "path": "results/ret_A_weights_YesNo.csv",
+      "bytes": 31631,
+      "sha256": "3332fdbe00a096aabeaa2d5406aeb65a3b0f2d4e428256d4df486b356e9141d5",
+      "rows": 180,
+      "columns": 14
+    },
+    {
+      "path": "results/ret_B_fees_SportsML.csv",
+      "bytes": 522,
+      "sha256": "112e0aa99589b530be6db7a8ca0dffa3bbecbd106b11796b9a3a8ff18cc436b2",
+      "rows": 4,
+      "columns": 9
+    },
+    {
+      "path": "results/ret_B_fees_YesNo.csv",
+      "bytes": 1594,
+      "sha256": "842a0682e3fd0e05e287fa8c7740fafba960a29e31fa75c043d4ee33c4b4d09b",
+      "rows": 14,
+      "columns": 9
+    },
+    {
+      "path": "results/ret_C_risk_SportsML.csv",
+      "bytes": 5143,
+      "sha256": "e767d3006d56970cf0ba79dcc7f4e3571b3cb99329e937a266534ab8fb64d54e",
+      "rows": 32,
+      "columns": 13
+    },
+    {
+      "path": "results/ret_C_risk_YesNo.csv",
+      "bytes": 5071,
+      "sha256": "7ce905c8f49d27aefc68047e5560cbab54cfd980d42394259b3d2b1f49fe0161",
+      "rows": 32,
+      "columns": 13
+    },
+    {
+      "path": "results/ret_D_competition_reg_SportsML.csv",
+      "bytes": 542,
+      "sha256": "eef22e77521d79e9deb18f62a5e81fdf15b6517a10894ec44353ca4c25ce77a6",
+      "rows": 4,
+      "columns": 9
+    },
+    {
+      "path": "results/ret_D_competition_reg_YesNo.csv",
+      "bytes": 1496,
+      "sha256": "cf9812e73ede23fb752cbd470798279388803321d68e570e257285711f73db97",
+      "rows": 12,
+      "columns": 9
+    },
+    {
+      "path": "results/ret_D_hours_SportsML.csv",
+      "bytes": 171,
+      "sha256": "ab1cc7cde53394d7540915ec820836731e7ad75823ad5a5b0b1e0ab1f1c850e9",
+      "rows": 1,
+      "columns": 7
+    },
+    {
+      "path": "results/ret_D_hours_YesNo.csv",
+      "bytes": 640,
+      "sha256": "73e1f010f9aaa09a7b5bcb1f1552f8ec21fb4e9a2f770f301b4da61b647d2631",
+      "rows": 8,
+      "columns": 7
+    },
+    {
+      "path": "results/ret_D_marketday_SportsML.csv",
+      "bytes": 216,
+      "sha256": "1425bec058faa4d238ac4b6a6c492b41055087fbb0411efc225622b27bfb4e46",
+      "rows": 1,
+      "columns": 10
+    },
+    {
+      "path": "results/ret_D_marketday_YesNo.csv",
+      "bytes": 1011,
+      "sha256": "4482a595d0a9b8e6a53e789a6409f11d247d42d3f347e0e3cc8f073c6547af6d",
+      "rows": 8,
+      "columns": 10
+    },
+    {
+      "path": "results/robustness_matrix_pooled.csv",
+      "bytes": 6279,
+      "sha256": "e7234184c8a2e0b5a8fb3e12d03c9be0b908d9fdfeff9db1b643a4cb79f4381f",
+      "rows": 75,
+      "columns": 5
+    },
+    {
+      "path": "results/robustness_matrix_pooled_fmt.csv",
+      "bytes": 1592,
+      "sha256": "feb6f8788435533e31ddf18331f002de6bde4e5fd0b4a2a90798783048af64b3",
+      "rows": 15,
+      "columns": 6
+    },
+    {
+      "path": "results/sim_classifier.csv",
+      "bytes": 577,
+      "sha256": "a088e5a5c6b4e846f02dd0c34bb8de639bdbfc227a9463df1cfa1c1b9070fd84",
+      "rows": 6,
+      "columns": 6
+    },
+    {
+      "path": "results/sim_classifier_confusion_heldout_configs.csv",
+      "bytes": 171,
+      "sha256": "5ee123007f093fb292d7b266c7ae749ae84b528182d3e7dcd6365678ebef51c5",
+      "rows": 4,
+      "columns": 5
+    },
+    {
+      "path": "results/sim_runs.csv",
+      "bytes": 72060,
+      "sha256": "e5ae7b7515b8f4b0d183ae7cf58a454a6f156fb388e4bce8fb36e0f7b095a896",
+      "rows": 102,
+      "columns": 47
+    },
+    {
+      "path": "results/sim_summary.csv",
+      "bytes": 8636,
+      "sha256": "83011161313551563a30f281cd7120985e885ac0180038a8047cdad47f7da3c4",
+      "rows": 4,
+      "columns": 94
+    },
+    {
+      "path": "results/size_response_gradients.csv",
+      "bytes": 156,
+      "sha256": "93ea52b66d0252712fac3899aad44084fb0e8fbe4d33840f9725b9e589e3a5c4",
+      "rows": 2,
+      "columns": 4
+    },
+    {
+      "path": "results/spl_A_prediction.csv",
+      "bytes": 1268,
+      "sha256": "abe0cf3b5ccfb89f42f40e2fc19faebaef7936e5d0f5781a918dbbc6e1991cff",
+      "rows": 8,
+      "columns": 11
+    },
+    {
+      "path": "results/wb_A_formula_OverUnder.csv",
+      "bytes": 301,
+      "sha256": "36df150e283cc2cebd27773764df0c30bbfec092239b0bb66d762ac03bb5c42e",
+      "rows": 1,
+      "columns": 11
+    },
+    {
+      "path": "results/wb_A_formula_SportsML.csv",
+      "bytes": 304,
+      "sha256": "f55753a2f0070f32e20ee526987bbee1ad55866abbcdd6b5dcef2f01f9794c71",
+      "rows": 1,
+      "columns": 11
+    },
+    {
+      "path": "results/wb_A_formula_YesNo.csv",
+      "bytes": 921,
+      "sha256": "fe084506ac06db73f075e2af67db9c68d196d7f11069b841ca1e14ff198e1035",
+      "rows": 5,
+      "columns": 11
+    },
+    {
+      "path": "results/wb_B_yreplace_OverUnder.csv",
+      "bytes": 1228,
+      "sha256": "dcf868aacc570e5af9935dcf9791b3033c4fabaaed861e98d97be9f642390c4f",
+      "rows": 6,
+      "columns": 12
+    },
+    {
+      "path": "results/wb_B_yreplace_SportsML.csv",
+      "bytes": 1225,
+      "sha256": "a15bdfd27d9ad0c57fd993c2f9c6bc5bea8e3dccc8b2a37bca10c4a1f9f9a1ca",
+      "rows": 6,
+      "columns": 12
+    },
+    {
+      "path": "results/wb_B_yreplace_YesNo.csv",
+      "bytes": 5356,
+      "sha256": "0efc108b54714f3677775ccd895a935a1790a73384ac6da35a5cf15e54f361f9",
+      "rows": 30,
+      "columns": 12
+    },
+    {
+      "path": "results/wb_D_oos_OverUnder.csv",
+      "bytes": 1655,
+      "sha256": "34e3a0cf52ff9cc2042e31395b4d2429726d31e82fe48fd159f15aeab62aa7ca",
+      "rows": 8,
+      "columns": 14
+    },
+    {
+      "path": "results/wb_D_oos_SportsML.csv",
+      "bytes": 1644,
+      "sha256": "6256d33d1f584e530f8f6fdda769c05a0d9f7836bf3c2d3ef699826c25aa4850",
+      "rows": 8,
+      "columns": 14
+    },
+    {
+      "path": "results/wb_D_oos_YesNo.csv",
+      "bytes": 4648,
+      "sha256": "d2f0e250c4c2bccc98fe769c27a7950c95bdd7842b3713cbc7ee6d358e7ae54e",
+      "rows": 24,
+      "columns": 14
+    },
+    {
+      "path": "results/wb_E_serial_OverUnder.csv",
+      "bytes": 254,
+      "sha256": "f2e9d75fe7a6a7e30642841d9330d2f5c2cd0081bb0be61612605c0d1a576773",
+      "rows": 1,
+      "columns": 9
+    },
+    {
+      "path": "results/wb_E_serial_SportsML.csv",
+      "bytes": 254,
+      "sha256": "bbf41f1b73d48db9a59e767769c9f32002db7e125db8b6c3dafe1c2efc36e43b",
+      "rows": 1,
+      "columns": 9
+    },
+    {
+      "path": "results/wb_E_serial_YesNo.csv",
+      "bytes": 775,
+      "sha256": "f1cdf0d1e7ce729f9928802c50de25516facfa695e547306458f4e2f7bf6d949",
+      "rows": 5,
+      "columns": 9
+    },
+    {
+      "path": "results/wb_F_size.csv",
+      "bytes": 3798,
+      "sha256": "1b743c08d27b1b1a6348a5b99c0846f7371ea9e21a2dabe522e34c31e6b21fdc",
+      "rows": 24,
+      "columns": 12
+    },
+    {
+      "path": "results/weight_activity_shifts.csv",
+      "bytes": 178,
+      "sha256": "343dc7a935ba8341a5df9129a945d257368d3145d947d3c1d1d8dadfe3d53048",
+      "rows": 3,
+      "columns": 3
+    },
+    {
+      "path": "results/weight_covariance.csv",
+      "bytes": 433,
+      "sha256": "531de18e9bd23563690688c06192e596e93fc7a04d540ebd484d0b35a834d825",
+      "rows": 6,
+      "columns": 5
+    }
+  ]
+}

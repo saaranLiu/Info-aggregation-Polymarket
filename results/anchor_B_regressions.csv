@@ -1,0 +1,65 @@
+sample,metric,spec,contrast,coef_bp,se_bp,n,n_alt_markets,n_ref_markets
+all Yes/No,eff,"basic (midpoint deciles, quarter)",A1 - A0,-141.47362915107257,17.078168845446946,2103188,,
+all Yes/No,eff,"basic (midpoint deciles, quarter)",A2 - A0,-150.19966758181764,15.414207678635199,2103188,,
+all Yes/No,eff,"basic (midpoint deciles, quarter)",A3 - A0,-27.511936885719376,37.293226073464965,2103188,,
+all Yes/No,eff,"basic (midpoint deciles, quarter)",A4 - A0,92.27155037524773,18.841505576503046,2103188,,
+all Yes/No,eff,"extended (+volume, trades, life, topic FE)",A1 - A0,-238.76419335545654,19.461973007933263,2103188,,
+all Yes/No,eff,"extended (+volume, trades, life, topic FE)",A2 - A0,-64.4543166794298,12.025992092224264,2103188,,
+all Yes/No,eff,"extended (+volume, trades, life, topic FE)",A3 - A0,-8.991822077400595,30.75875594580117,2103188,,
+all Yes/No,eff,"extended (+volume, trades, life, topic FE)",A4 - A0,-1.719595616698513,9.979992304690821,2103188,,
+within Politics,eff,basic,A3 - A0,-0.47108136043601906,52.481022886243586,450542,34.0,3488.0
+within Politics,eff,extended,A3 - A0,7.099638061369958,32.30863749238969,450542,34.0,3488.0
+within Crypto,eff,basic,A2 - A0,-54.060055244803806,30.920236041073448,1010242,2518.0,257.0
+within Crypto,eff,extended,A2 - A0,-71.0873970062144,15.180120938406654,1010242,2518.0,257.0
+within Sports,eff,basic,A1 - A0,-157.46063866746078,20.097497992682182,338250,1621.0,266.0
+within Sports,eff,extended,A1 - A0,-162.44018412431456,25.05013323247291,338250,1621.0,266.0
+within Finance,eff,basic,A2 - A0,0.9474239033969554,59.22026748196374,47027,433.0,226.0
+within Finance,eff,extended,A2 - A0,-42.229404506787766,35.08471110153498,47027,433.0,226.0
+all Yes/No,info,"basic (midpoint deciles, quarter)",A1 - A0,60.154760837025634,57.56987819448467,2103188,,
+all Yes/No,info,"basic (midpoint deciles, quarter)",A2 - A0,95.22409780515913,41.681480478612436,2103188,,
+all Yes/No,info,"basic (midpoint deciles, quarter)",A3 - A0,16.088940199514987,269.94465882972355,2103188,,
+all Yes/No,info,"basic (midpoint deciles, quarter)",A4 - A0,132.30522047312024,55.78816659592709,2103188,,
+all Yes/No,info,"extended (+volume, trades, life, topic FE)",A1 - A0,207.24568978218446,107.63667990154173,2103188,,
+all Yes/No,info,"extended (+volume, trades, life, topic FE)",A2 - A0,276.7825654226975,87.32365054859966,2103188,,
+all Yes/No,info,"extended (+volume, trades, life, topic FE)",A3 - A0,-32.22931089434828,271.12925245830274,2103188,,
+all Yes/No,info,"extended (+volume, trades, life, topic FE)",A4 - A0,116.43860666291438,56.60426325625111,2103188,,
+within Politics,info,basic,A3 - A0,331.39440777201446,313.1725513601946,450542,34.0,3488.0
+within Politics,info,extended,A3 - A0,283.13650531535154,288.3427204629113,450542,34.0,3488.0
+within Crypto,info,basic,A2 - A0,215.40254466364303,108.56567483938782,1010242,2518.0,257.0
+within Crypto,info,extended,A2 - A0,236.7486176180347,108.59481873068674,1010242,2518.0,257.0
+within Sports,info,basic,A1 - A0,194.57449027303065,153.7789694327315,338250,1621.0,266.0
+within Sports,info,extended,A1 - A0,169.78853956902884,154.22591009203262,338250,1621.0,266.0
+within Finance,info,basic,A2 - A0,214.04399602165134,145.53630283368219,47027,433.0,226.0
+within Finance,info,extended,A2 - A0,126.02599063440745,161.34737899717334,47027,433.0,226.0
+all Yes/No,RS,"basic (midpoint deciles, quarter)",A1 - A0,-201.6283899880986,63.92592143984489,2103188,,
+all Yes/No,RS,"basic (midpoint deciles, quarter)",A2 - A0,-245.423765386977,49.75848569764179,2103188,,
+all Yes/No,RS,"basic (midpoint deciles, quarter)",A3 - A0,-43.60087708523439,273.0844410578946,2103188,,
+all Yes/No,RS,"basic (midpoint deciles, quarter)",A4 - A0,-40.03367009787251,62.167914145342536,2103188,,
+all Yes/No,RS,"extended (+volume, trades, life, topic FE)",A1 - A0,-446.00988313764134,118.09992129274248,2103188,,
+all Yes/No,RS,"extended (+volume, trades, life, topic FE)",A2 - A0,-341.2368821021268,85.0176877285914,2103188,,
+all Yes/No,RS,"extended (+volume, trades, life, topic FE)",A3 - A0,23.237488816947696,265.69302909659547,2103188,,
+all Yes/No,RS,"extended (+volume, trades, life, topic FE)",A4 - A0,-118.1582022796127,57.72950935290398,2103188,,
+within Politics,RS,basic,A3 - A0,-331.86548913245036,315.77059511947107,450542,34.0,3488.0
+within Politics,RS,extended,A3 - A0,-276.0368672539818,281.2522522982514,450542,34.0,3488.0
+within Crypto,RS,basic,A2 - A0,-269.4625999084466,118.1698626465686,1010242,2518.0,257.0
+within Crypto,RS,extended,A2 - A0,-307.8360146242492,109.47732479024539,1010242,2518.0,257.0
+within Sports,RS,basic,A1 - A0,-352.0351289404911,158.58301410853076,338250,1621.0,266.0
+within Sports,RS,extended,A1 - A0,-332.2287236933434,161.7151505809351,338250,1621.0,266.0
+within Finance,RS,basic,A2 - A0,-213.09657211825424,139.27362473092603,47027,433.0,226.0
+within Finance,RS,extended,A2 - A0,-168.25539514119535,160.64744830577172,47027,433.0,226.0
+all Yes/No,over_100,"basic (midpoint deciles, quarter)",A1 - A0,-152.30297404118218,51.56342241798124,2103188,,
+all Yes/No,over_100,"basic (midpoint deciles, quarter)",A2 - A0,-127.92469481047938,39.51726058119435,2103188,,
+all Yes/No,over_100,"basic (midpoint deciles, quarter)",A3 - A0,-79.56859219589786,189.5491320167826,2103188,,
+all Yes/No,over_100,"basic (midpoint deciles, quarter)",A4 - A0,-130.6861519900945,47.42693390972416,2103188,,
+all Yes/No,over_100,"extended (+volume, trades, life, topic FE)",A1 - A0,-272.74945034833604,92.07178286793608,2103188,,
+all Yes/No,over_100,"extended (+volume, trades, life, topic FE)",A2 - A0,-232.25893399483635,81.22030967655684,2103188,,
+all Yes/No,over_100,"extended (+volume, trades, life, topic FE)",A3 - A0,-48.97832061819125,184.48059936078718,2103188,,
+all Yes/No,over_100,"extended (+volume, trades, life, topic FE)",A4 - A0,-153.59215408987762,44.1873236415388,2103188,,
+within Politics,over_100,basic,A3 - A0,-198.76746101050298,264.4281526219935,450542,34.0,3488.0
+within Politics,over_100,extended,A3 - A0,-175.1452232558831,244.25079632558754,450542,34.0,3488.0
+within Crypto,over_100,basic,A2 - A0,-223.94281767754168,113.07909581355374,1010242,2518.0,257.0
+within Crypto,over_100,extended,A2 - A0,-247.44093213179167,102.73288748584396,1010242,2518.0,257.0
+within Sports,over_100,basic,A1 - A0,-263.7868634531905,133.90633800624485,338250,1621.0,266.0
+within Sports,over_100,extended,A1 - A0,-262.20721933274297,129.40428750112184,338250,1621.0,266.0
+within Finance,over_100,basic,A2 - A0,-183.35350084061432,113.59876751488753,47027,433.0,226.0
+within Finance,over_100,extended,A2 - A0,-139.15464442367593,133.1648879425834,47027,433.0,226.0

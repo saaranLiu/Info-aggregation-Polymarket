@@ -1,0 +1,41 @@
+{
+  "seed": 2718,
+  "windows": [
+    "W_paper (life before 24h)",
+    "W_48h_24h",
+    "W_7d_24h"
+  ],
+  "cells": [
+    [
+      "YesNo",
+      "pooled"
+    ],
+    [
+      "YesNo",
+      "Politics"
+    ],
+    [
+      "YesNo",
+      "Crypto"
+    ],
+    [
+      "SportsML",
+      "pooled"
+    ]
+  ],
+  "models": [
+    "price",
+    "small",
+    "large",
+    "joint"
+  ],
+  "folds": 5,
+  "cluster": "topic by resolution date",
+  "bootstrap_draws": 1000,
+  "ridge_average_loss": 1e-08,
+  "sample": "n_win>=20; .02<p_post<.98; both size imbalances observed; common sample for all models",
+  "pooled_controls": "logit(p_post), topic indicators",
+  "cell_controls": "logit(p_post)",
+  "new_coefficient_family": 24,
+  "source": "saved market-window observations and summary CSVs"
+}

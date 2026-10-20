@@ -1,0 +1,10 @@
+venue,topic,bin,n,estimate_bp,se_bp,clusters,cluster_definition
+Polymarket,Politics,s1 <$100,436981,289.64936117881945,36.64779632845979,541,topic x on-chain resolution date
+Polymarket,Politics,s2 $100-1k,69163,-39.22030992162131,107.199885442392,524,topic x on-chain resolution date
+Polymarket,Politics,s3 >=$1k,9987,-567.4760771059026,224.7521378241586,328,topic x on-chain resolution date
+Polymarket,Crypto,s1 <$100,835480,49.296965617887615,17.818140608495924,477,topic x on-chain resolution date
+Polymarket,Crypto,s2 $100-1k,153481,0.2077075711259922,23.49764983127252,463,topic x on-chain resolution date
+Polymarket,Crypto,s3 >=$1k,24256,-45.948714435579994,42.28393577080939,404,topic x on-chain resolution date
+Kalshi,All eligible,s1 <$100,45707292,137.92860228953626,25.16811136228057,328969,event_ticker
+Kalshi,All eligible,s2 $100-1k,7433273,142.80254472020482,22.097655296492796,93622,event_ticker
+Kalshi,All eligible,s3 >=$1k,864933,155.62407724066503,37.62825131909802,25319,event_ticker

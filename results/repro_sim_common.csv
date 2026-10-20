@@ -1,0 +1,15 @@
+setting,value
+markets per configuration and seed,2000
+seeds,"3 (seed = 1000 x config + {0,1,2})"
+trades per market T,"lognormal(log 400, 0.5), clipped to [150, 1500]"
+prior v0 and outcome,"v0 ~ U(0.25, 0.75); Y ~ Bernoulli(v0)"
+half-spread s,"U(0.005, 0.03) per market"
+order size (USD),"lognormal(log 30, 1.5)"
+inter-arrival (s),"exponential, market mean lognormal(log 30, 0.8)"
+execution,"p = clip(m_true + D s, 0.005, 0.995); m_true clipped to [0.01, 0.99]"
+uninformed direction,D_t = D_{t-1} with probability rho
+informed taker,probability alpha0 + alpha1 1{size >= 1000}; D = 2Y - 1
+maker learning,"logit update D log((ah + (1-ah)/2)/((1-ah)/2)), ah = alpha_hat_ratio x alpha"
+public signal,"with probability pi: x ~ N((2Y-1) mu, 1); logit += 2 mu x"
+inventory,inv = (1-eta) inv + D size/100; m = sigmoid(logit + gamma inv)
+statistics,"same switch-pair proxy, |p-0.5|<0.3 filter, 100-trade horizon as the empirical pipeline"

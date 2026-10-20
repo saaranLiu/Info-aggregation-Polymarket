@@ -1,0 +1,2 @@
+grp,n_trades,share_multifill,mean_fills,p99_fills,share_in_shared_block,share_block_multi_taker,share_in_shared_block_lateday,share_taker_block_bothdir
+YesNo,31502822,0.23494298383808282,1.6046677342112399,9.0,0.1368205045249597,0.1348335714178241,0.1912980340939925,0.0021746514327284673

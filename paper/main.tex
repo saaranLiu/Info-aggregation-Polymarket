@@ -1,0 +1,505 @@
+\documentclass[sigconf,anonymous,nonacm,balance=false]{acmart}
+
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{balance}
+\usepackage{etoolbox}
+\usepackage{placeins}
+% Table text uses one physical size and one row-spacing rule throughout.
+\AtBeginEnvironment{tabular}{\fontsize{7.5}{9.0}\selectfont\renewcommand{\arraystretch}{1.05}}
+\newcommand{\tabstyle}{\setlength{\tabcolsep}{3pt}}
+\graphicspath{{figures/}}
+\renewcommand{\topfraction}{0.90}
+\renewcommand{\dbltopfraction}{0.90}
+\renewcommand{\textfraction}{0.10}
+\renewcommand{\floatpagefraction}{0.75}
+\renewcommand{\dblfloatpagefraction}{0.75}
+\setcounter{topnumber}{2}
+\setcounter{dbltopnumber}{2}
+\setcounter{totalnumber}{3}
+\newcommand{\eff}{\mathrm{eff}}
+\newcommand{\info}{\mathrm{info}}
+\newcommand{\RS}{\mathrm{RS}}
+\newcommand{\PI}{\mathrm{PI}}
+\newcommand{\ovr}{\mathrm{over}}
+\newcommand{\estse}[2]{#1\,(#2)}
+\newcommand{\thead}[1]{\begin{tabular}[c]{@{}c@{}}#1\end{tabular}}
+\AtBeginDocument{\providecommand\BibTeX{{Bib\TeX}}}
+\setcopyright{none}
+\settopmatter{printacmref=false}
+\input{numbers}
+\input{numbers_r2}
+\input{numbers_v3}
+\input{numbers_ext}
+\input{numbers_editorial}
+
+\begin{document}
+\title{Order Size and Conditional Pricing in Online Prediction Markets}
+\author{Anonymous Author(s)}
+\affiliation{\institution{Anonymous Institution}\country{}}
+\renewcommand{\shortauthors}{Anon.}
+
+\begin{abstract}
+Online prediction markets turn heterogeneous orders into a public price that serves as a collective forecast. We study how order size relates to liquidity margins and conditional pricing on Polymarket, using 2.1 million final-day Yes/No trades and realized binary payoffs. Two accounting identities separate execution costs, outcome alignment, settlement margins and subsequent midpoint responses; two public quote archives check the transaction-derived midpoints. The settlement margin is $+\FPRSTr$ bp per trade and $\FPRSSh$ bp per actual share. Dollar-weighted margins are negative but concentrated across resolution dates, with an event-cluster interval spanning zero. The size gradient in Politics lies mainly in the outcome-related between-market component, whereas Crypto's gradient primarily reflects within-market timing. Small Politics orders leave a positive residual of $\PolSHourR$ bp one hour later, persisting in samples whose horizons end before scheduled close or price convergence. Small Crypto residuals remain near zero. The political pattern recurs across resolution periods, while forward forecast gains remain uncertain. A separate Kalshi sample shares small-order dominance and positive small-order margins, with different size gradients. These findings connect participation structure to the interpretation of prices and liquidity on online prediction platforms.
+
+\end{abstract}
+
+\keywords{prediction markets, information aggregation, online markets, order flow, trade size, liquidity provision}
+\maketitle
+
+\section{Introduction}
+Online prediction markets transform trading about elections, asset prices and sporting events into public forecasts~\cite{wolfers2004prediction,arrow2008promise}. A single displayed price aggregates orders from participants with different beliefs, motives and resources. Platforms and readers therefore face a basic interpretation problem: how do the composition of incoming orders and the book's response shape the forecast they see?
+
+Small orders can dominate participation while a smaller group supplies most traded capital. Public transactions and profiles expose this heterogeneity~\cite{soska2021derivatives,kawai2023neighbor}, as contributions do in crowdfunding~\cite{horvat2023hidden}. Prediction markets additionally supply a binary settlement benchmark for relating each trade to the eventual outcome and subsequent prices.
+
+An order can leave a positive margin to the liquidity-supplying side while its later midpoint remains too far in the trade's direction relative to the payoff. We study how both quantities vary with size and topic through three questions:
+
+\noindent\textbf{RQ1.} How does order-size composition relate to the settlement margin under trade, share and dollar weights?
+
+\noindent\textbf{RQ2.} How do post-trade pricing residuals vary with order size and topic, across clock horizons and event cutoffs?
+
+\noindent\textbf{RQ3.} How much does order flow improve outcome forecasts conditional on the prevailing price?
+
+We use 2.1 million final-day Yes/No Polymarket trades. Two identities and a within/between decomposition separate execution, outcome alignment and price timing. Observed quotes, clock horizons and event cutoffs check measurement; a separate Kalshi sample assesses scope.
+
+\paragraph{Findings.}
+On a common observed-horizon sample, the settlement margin is positive per trade and negative under actual-share and dollar weights. Alignment rises with order size faster than execution cost. Politics contributes an outcome-related size gradient; in Crypto, the gradient is primarily within-market timing. The dollar-weighted average is concentrated across resolution dates, and its event-cluster interval spans zero. After a Politics order below \$100, the midpoint retains a positive direction-signed residual at ten minutes through two hours. Small Crypto residuals are close to zero. Politics residuals remain positive across resolution periods, while forward prediction gains remain imprecisely estimated.
+
+\paragraph{Contributions.}
+First, we provide an auditable trade-level measurement framework linking binary settlement, actual fill quantities and quote-validated midpoints, with horizons ending at explicit event cutoffs. Second, we document size and topic differences in liquidity margins and conditional pricing, using direct contrasts and common samples to connect the two findings. Third, we distinguish cross-venue regularities in participation and small-order margins from sample-specific size gradients, alongside concentration, direction and forward-prediction checks. The accompanying analysis includes generated numerical tables, simulation settings and classification rules.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{measurement_timeline}
+\Description{Panel a shows the midpoint of an opposite-direction pair completed before the focal buy, and the execution cost relative to that midpoint. Panel b shows five horizon endpoints before the admissibility cutoff.}
+\caption{Measurement and horizon eligibility. (a) A completed opposite-direction pair defines the pre-trade midpoint; the focal buy illustrates execution cost. Prices are schematic. (b) The common sample observes all four clock horizons and H100 by cutoff $K$. Endpoint positions illustrate one admissible ordering. Cutoffs R, S, S1 and C are defined in the text.}
+\label{fig:timeline}
+\end{figure*}
+
+\section{Setting, Data and Measurement}
+\label{sec:data}
+\paragraph{Contracts and trades.}
+A binary contract pays \$1 when its reference outcome occurs and zero otherwise. We map fills in complementary tokens to a common reference outcome; $D=+1$ denotes buying that outcome. The Polymarket v1 archive~\cite{qin2026polymarket} covers November 2022 to April 2026, with 601,934,424 fills in 688,131 markets. Of these markets, 546,187 have a resolved binary payout consistent with the on-chain winner. Fills sharing a market, block timestamp, taker and direction form one trade. Its notional is $u=\sum_j u_j$ and its price is the USD-weighted fill price $p=\sum_j u_jp_j/\sum_j u_j$. Actual outcome-token quantities supply share weights.
+
+\begin{table}[t]
+\centering
+\caption{Analysis samples. Main: 1--24 h before on-chain resolution, $p\in(0.2,0.8)$, defined midpoint and at least 100 lifetime trades. H100 additionally observes 100 subsequent trades. Clock samples apply the cutoff-specific common-horizon rule.}
+\label{tab:flow}
+\tabstyle
+\input{tables/sample_overview}
+\end{table}
+
+\paragraph{Samples.}
+The main Yes/No sample has 2.1 million trades in 11,300 markets (Table~\ref{tab:flow}). The observed 100-trade sample contains 1.8 million trades in 7,819 markets. We also compare sports moneyline and over/under contracts. These samples describe final-day trading at interior prices. Market-level prediction uses an earlier window ending 24 hours before resolution and its own eligibility rules (Section~\ref{sec:prediction}).
+
+\paragraph{Midpoints.}
+For consecutive opposite-direction trades, their mean price estimates the midpoint. The prevailing midpoint $m$ is the latest pair completed strictly before the focal trade; the later midpoint $m_{+h}$ uses the latest pair completed by horizon $h$. Pair duration, age and crossing characterize measurement quality. In the main sample, 20.4\% of trades have negative proxy execution cost and 11.9\% of defining pairs are crossed. We examine these features through quote comparisons and alternative pair constructions (Appendix~\ref{app:measurement}).
+
+\paragraph{Observed quotes.}
+The pmxt archive records exchange-emitted best bid and ask quotes. We align the reference-axis book to block timestamps using a \QLead-second lead, selected by execution at the touched side (\QMatchPct\%; Figure~\ref{fig:quotes}). The validation keeps a two-sided, uncrossed quote at most 15 minutes old, on every third archive day from 22 February 2026 (\QDays{} days), with each quote-based horizon ending that day. It covers \QTrades{} trades in \QMktsAll{} Politics and Crypto markets. Paired proxy--quote residual differences in the reported cells are at most \QResidMaxAbs{} bp. A second archive, Dome, supplies an additional paired check over October 2025--March 2026 (Appendix~\ref{app:external}). These paired checks address the quote-versus-trade distinction emphasized by Akey et al.~\cite{akey2026quotes}.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\columnwidth]{quote_validation}
+\Description{Two panels show quote-to-trade alignment by lead and paired proxy-minus-quote differences for outcome alignment and the 100-trade residual, with event-cluster intervals.}
+\caption{Quote checks separate alignment error from horizon residual error. Lead is chosen by touched-side execution; paired differences use identical trades. Bars are 95.0\% event-cluster intervals.}
+\label{fig:quotes}
+\end{figure}
+
+\paragraph{Clocks and cutoffs.}
+On-chain resolution can lag the event: \PolAfterClose\% of main-window Politics trades occur after the scheduled close, compared with \CryAfterClose\% in Crypto. We use four cutoffs $K$: R, on-chain resolution; S, the earlier of scheduled close and R; S1, S minus one hour; and C, the earlier of S and the last trade pricing the eventual winner below 95.0\% of par. C is a retrospective convergence screen based on the realized winner. Each cutoff's common sample requires the trade's 10-minute, 30-minute, one-hour, two-hour and 100-trade horizons to end by $K$ (Figure~\ref{fig:timeline}). Horizons within a cutoff share observations; cutoffs select different observations. Kalshi calibration research also finds event-time anchoring consequential~\cite{kagan2026calibration}.
+
+\paragraph{Inference and units.}
+Standard errors cluster by topic and on-chain resolution date; market clustering and two-way event--calendar-week clustering provide additional inference~\cite{cameron2011robust}. The primary family contains \HeadlineCount{} tests with Benjamini--Hochberg correction. Equivalence tests use fixed margins of 50.0 and 25.0 probability bp. One probability unit equals 10,000.0 bp; 100.0 bp equals one percentage point. USD-weighted margins retain these probability-price units. All forecast gains use baseline minus augmented-model Brier loss, scaled by $10^4$, so positive values favor the augmented model.
+
+\section{Outcome-Based Decomposition}
+\label{sec:framework}
+Let $Y\in\{0,1\}$ denote the payoff, $p$ the execution price and $D\in\{+1,-1\}$ the trade direction. The prevailing and horizon midpoints are $m$ and $m_{+h}$. Signing in the trade's direction yields
+\begin{align}
+\underbrace{D(p-m)}_{\eff} &= \underbrace{D(Y-m)}_{\info}+\underbrace{D(p-Y)}_{\RS},\label{eq:i1}\\
+\underbrace{D(m_{+h}-m)}_{\PI_h} &= \info+\underbrace{D(m_{+h}-Y)}_{\ovr_h}.\label{eq:i2}
+\end{align}
+Execution cost $\eff$ combines outcome alignment $\info$ and the gross settlement margin $\RS$ retained by the liquidity-supplying side. Account profit additionally depends on quantities, fees and other positions. A positive mean $\ovr_h$ indicates that the later midpoint lies too far in the trade's direction relative to the payoff.
+
+\paragraph{Conditional pricing benchmark.}
+Write $m^*_{i+h}=\mathbb E[Y\mid\mathcal F_{i+h}]$ for the posterior-mean price. With the focal trade in the information set, iterated expectations imply
+\begin{equation}
+\mathbb E[D_i(m^*_{i+h}-Y)\mid D_i,u_i]=0.\label{eq:orthogonality}
+\end{equation}
+The focal direction and size are part of the observed history, so the zero-mean forecast error remains orthogonal to direction within each size class. The empirical residual tests this conditional moment. Its interpretation depends on the horizon, eligible observations and information available at the endpoint. Event cutoffs define the corresponding admissible samples.
+
+\paragraph{Within and between markets.}
+The payoff is constant within market $g$, giving
+\begin{equation}
+\mathbb E_g[D(Y-m)] = \underbrace{\bar D_g(Y_g-\bar m_g)}_{\text{between}}+\underbrace{[-\operatorname{Cov}_g(D,m)]}_{\text{within}}.\label{eq:wb}
+\end{equation}
+The between term relates mean direction to the market's payoff--midpoint gap. The within term measures direction--price timing and is invariant to replacing $Y$. Reversion, midpoint staleness and trading dynamics can all contribute to this covariance. This decomposition identifies the part of measured alignment that explicitly depends on the realized outcome.
+
+\paragraph{Weights and size gradients.}
+For any positive weight $w$, the change from an unweighted mean is $\operatorname{Cov}(w,x)/\mathbb E[w]$. Therefore,
+\begin{equation}
+\mathbb E_w[\RS]-\mathbb E[\RS]
+=\frac{\operatorname{Cov}(w,\eff)-\operatorname{Cov}(w,\info)}{\mathbb E[w]}.\label{eq:margin_cov}
+\end{equation}
+Share- or dollar-weighted margins fall when size covaries more with alignment than with execution cost. Likewise, writing $\Delta$ for large-minus-small differences gives $\Delta\ovr_h=\Delta\PI_h-\Delta\info$: residuals fall with size when alignment rises faster than the response. Across markets, the same weighting identity relates trade-weighted means to market activity.
+
+\section{Order Size and Liquidity Margins}
+\label{sec:info}
+\subsection{Margins under alternative weights}
+\label{sec:rent}
+\textbf{The typical trade leaves a positive settlement margin; capital weights shift the average below zero.} On the common observed-horizon sample, the pooled margin is $+\FPRSTr$ bp per trade, compared with \FPRSSh{} bp per actual share and \FPRSUsd{} bp per dollar (Table~\ref{tab:main}; Figure~\ref{fig:weights}(a)). The sign reversal answers RQ1: frequent small interactions and the allocation of traded capital describe different sides of liquidity provision. A positive margin on the typical interaction can coexist with losses concentrated in the orders that carry more capital.
+
+Equation~\eqref{eq:margin_cov} explains the reversal. Capital weighting increases both execution cost and outcome alignment, but the increase in alignment is larger. Execution compensation is outweighed by payoff exposure. Equal-market margins are higher because busy markets have lower margins (Appendix Table~\ref{tab:weight_shifts}). This separation accords with evidence that forecasting and execution are distinct sources of prediction-market returns~\cite{dellavedova2026profits,akey2026who}.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{weights}
+\Description{Panel a uses grouped horizontal bars to compare settlement margins under market, trade, actual-share and dollar weights. Panel b pairs full-sample and five-date-deletion estimates with event-cluster intervals.}
+\caption{Liquidity margins depend on weighting and resolution-date concentration. (a) Weighted point estimates on the common H100 sample. (b) Full-sample estimates and estimates after dropping the five topic-date clusters with the largest absolute contributions; bars are 95.0\% event-cluster intervals. Actual fill quantities define share weights. Probability bp.}
+\label{fig:weights}
+\end{figure*}
+
+\begin{table*}[t]
+\centering
+\caption{Execution costs, alignment, margins, responses and residuals on the observed H100 sample. All five quantities share observations and weights within a row. Parentheses are event-cluster SEs; actual fill quantities define share weights. Probability bp; identities close before rounding.}
+\label{tab:main}
+\input{tables/decomposition}
+\end{table*}
+
+\paragraph{Date concentration.}
+The per-trade margin remains positive after removing the five topic-date clusters with the largest absolute contributions. The dollar-weighted mean moves substantially toward zero, from \ConUsd{} to \ConDrop{} bp; its full-sample event-cluster interval already spans zero (Figure~\ref{fig:weights}(b)). Politics shows the strongest concentration: its five largest clusters account for \ConPolTop\% of absolute contributions. Date concentration preserves the positive per-interaction result while qualifying the capital-weighted average.
+
+Shared outcomes reduce the independent information in transaction counts. Weight-sensitive Polymarket returns in Cardozo and Rivero-Wildemauwe~\cite{cardozo2026favorite} similarly motivate reporting aggregation units and concentration.
+
+\paragraph{Fill quantities and prices.}
+Share weights use observed outcome-token quantities summed over fills. Replacing the USD-weighted execution price with its share-weighted counterpart changes the pooled per-trade margin by only \FPRSDiff{} bp and preserves the negative actual-share margin. Appendix Table~\ref{tab:fill} also reports the constructed quantity $u/p$. Its difference from observed shares follows from complementary tokens executing at their native prices, including $1-p$ on the reference axis. Thus, the reversal survives a fill-level price check.
+
+\subsection{Outcome-related and timing components}
+\textbf{Politics and Crypto have different sources of the size gradient.} Pooled alignment in the main sample is predominantly within-market direction--price covariance (Table~\ref{tab:wb_size}). Pooling, however, conceals a consequential topic difference. In Politics, alignment rises strongly with order size, and most of the increase lies in the between component. Large political orders more often point toward outcomes that eventually pay relative to the market's mean midpoint. Small political orders have a negative between component, offset by positive within-market timing. Their near-zero total alignment therefore combines two economically different relationships.
+
+In Crypto, the size gradient lies mainly in the within component. Larger orders tend to trade at more favorable points along the midpoint path, while the between component provides much less of the increase. Since the within term is unchanged when the market's outcome is replaced, it can arise from price timing, reversion or proxy staleness. Thus, the political gradient involves outcomes, while Crypto primarily reflects timing.
+
+\begin{table}[t]
+\centering
+\caption{The Politics size gradient lies mainly between markets; the Crypto gradient lies mainly within markets. Main final-day sample, eq.~\eqref{eq:wb}. Probability bp; event-cluster SEs.}
+\label{tab:wb_size}
+\input{tables/wb_size}
+\end{table}
+
+Figure~\ref{fig:size} connects the alignment gradient to margins and residuals on the observed H100 sample. Large Politics orders have higher alignment and lower margins than small orders. Their price response also increases, but less than alignment; the resulting large-minus-small residual contrast is \ThTwo{} bp. This links liquidity margins in RQ1 to conditional pricing in RQ2.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{size_pricing}
+\Description{Three horizontal interval plots compare alignment, settlement margin and the H100 residual across order-size bins. Politics uses pink diamonds and Crypto blue circles, with 95 percent event-cluster intervals.}
+\caption{Order size separates alignment, liquidity margins and subsequent pricing. Estimates use the observed H100 sample; bars are 95.0\% event-cluster intervals. Politics: pink diamonds; Crypto: blue circles. The shaded residual band marks $\pm50.0$ bp as a visual equivalence benchmark. Probability bp.}
+\label{fig:size}
+\end{figure*}
+
+\section{Conditional Pricing after Small Political Orders}
+\label{sec:over}
+\subsection{Trade-count horizons and direct contrasts}
+\textbf{Small Politics orders leave a positive residual with a size gradient.} After 100 subsequent trades, their residual is \PolSmall{} bp and survives correction across the primary test family. The direct large-minus-small contrast is \ThTwo{} bp, with an interval excluding zero under both event and two-way clustering (Table~\ref{tab:contrasts}). The regression accounts for the shared covariance between size classes. This comparison establishes a size gradient even though the large-order level itself is imprecisely estimated.
+
+A positive residual means that the later midpoint averages above the payoff after a buy and below it after a sell. This conditional moment describes the order group; individual trades can still precede informative updates.
+
+\begin{table}[t]
+\centering
+\caption{Direct residual contrasts share the covariance from one regression on the observed H100 sample. Parentheses are topic-by-resolution-date SEs; the final column adds calendar-week clustering. Probability bp.}
+\label{tab:contrasts}
+\input{tables/contrasts}
+\end{table}
+
+Small Politics orders also exceed small Crypto orders in the direct topic comparison. Crypto's small-order residual is close to zero and passes the fixed $\pm50.0$ bp equivalence test; the tighter $\pm25.0$ bp test remains inconclusive. The wider band also contains pooled Crypto, its medium orders, sports moneyline and Over/Under under the corresponding tests. Equivalence concerns the precision of a bounded average residual. The imprecise Crypto large-order estimate supports a weaker conclusion, since a point estimate near zero alone cannot establish a small effect.
+
+\subsection{Clock horizons and event eligibility}
+\textbf{The small-Politics residual persists over fixed amounts of real time.} Figure~\ref{fig:clock} shows a positive political pattern from ten minutes through two hours. At one hour it is \PolSHourR{} bp under on-chain resolution and remains positive under the earlier cutoffs. Small Crypto estimates stay near zero, and the Politics--Crypto difference is positive throughout the cutoff--horizon grid (Appendix Table~\ref{tab:clock}). The clock design addresses a limitation of trade-count horizons: the same number of later trades can represent very different opportunities for updating across markets.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{clock_profile}
+\Description{Four cutoff panels show small-order pricing residuals at ten minutes, thirty minutes, one hour and two hours. Politics estimates are positive; Crypto estimates cluster near zero. Each panel uses its own common sample.}
+\caption{Small political orders retain a directional residual across real-time horizons. Each panel uses the common sample of its cutoff; bars are 95.0\% event-cluster intervals. The shaded band marks $\pm50.0$ bp. Time is in elapsed minutes on a log scale. Each cutoff has its own eligible observations. Probability bp.}
+\label{fig:clock}
+\end{figure*}
+
+Each panel holds trades fixed across horizons. S and C select fewer markets, so their larger political estimates can reflect composition as well as timing. The positive sign persists before scheduled close and retrospective convergence. Matching on midpoint decile, time to resolution and quarter, with log market trade count, preserves the topic difference (Appendix Table~\ref{tab:clock}).
+
+\paragraph{Retention and direction.}
+The H100 rule retains \RetPol\% of Politics small orders and \RetCry\% of Crypto small orders. Its median elapsed horizon is longer in Politics, reinforcing the value of clock comparisons. Small- and large-order settlement margins retain their signs among kept and dropped trades, while medium-order signs differ (Table~\ref{tab:retention}). Selection is therefore relevant to the composition of the sample, and the unobserved H100 residuals of dropped trades remain unresolved. Direction is a separate source of sensitivity. Using the tick rule preserves a positive Politics small-order residual while materially reducing its magnitude; rebuilding the midpoint from tick-rule switches yields a similar change (Table~\ref{tab:direction}). The direction checks support the qualitative sign with a narrower claim about the stability of its numerical level.
+
+\begin{table}[tbp]
+\centering
+\caption{H100 retention, elapsed time and settlement margins for retained and dropped trades. Probability bp; event-cluster SEs.}
+\label{tab:retention}
+\tabstyle
+\input{tables/retention}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{Direction sensitivity on the same H100 trades and fixed midpoint. Tick rule carries the last nonzero price change; zero changes cover \DirZero\% of trades. Difference: tick minus on-chain. Probability bp.}
+\label{tab:direction}
+\tabstyle
+\input{tables/direction}
+\end{table}
+
+\paragraph{Quotes and periods.}
+Dome quotes change the Politics small-order residual little on identical trades, although archive coverage limits extrapolation. Across four resolution periods, one-hour point estimates stay positive under R, S and C with period-specific uncertainty (Appendix Table~\ref{tab:forward}). Forward scoring tests whether this recurrence supports forecast improvement.
+
+Figure~\ref{fig:proxy} compares small-order residuals across alternative midpoint constructions. These main-sample diagnostics cap unavailable H100 endpoints, so their levels differ from the observed-horizon estimates. The political sign persists across constructions, while the choice of midpoint changes its magnitude.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\columnwidth]{proxy_sensitivity}
+\Description{A forest plot compares capped-endpoint small-order residuals across eight midpoint constructions in Politics and Crypto.}
+\caption{Small-order residuals across midpoint constructions on the main sample, with capped H100 endpoints. Filled markers show the main construction; open markers show alternative pair constructions and the sign-consistent selection. Bars are 95.0\% market-cluster bootstrap intervals. Shading: $\pm50.0$ bp.}
+\label{fig:proxy}
+\end{figure}
+
+\section{Forecasting and Generalization}
+\label{sec:prediction}
+\subsection{Forward prediction conditional on the midpoint}
+An expanding-window outcome logit uses the one-hour midpoint, a Politics indicator and direction-by-topic-by-size terms. Each test quarter uses coefficients fitted on earlier resolution quarters. On the S common sample, the small-Politics direction coefficient is negative in all six test quarters, matching the positive residual's sign. Forecast gains nonetheless vary across quarters, and the pooled Politics Brier interval spans zero (Figure~\ref{fig:forecast}). C gives a similar pattern (Appendix Table~\ref{tab:fwdpred}).
+
+For RQ3, stable coefficient signs establish a recurring association. Forecast improvement additionally requires learning its magnitude on earlier events and maintaining it later. Paired forward losses test that requirement and allow both gains and deterioration.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{forward_prediction}
+\Description{Panel a shows quarterly Politics Brier gains as diverging bars. Panel b shows pooled Politics and Crypto gains with paired 95 percent event-cluster intervals. Positive gains favor the flow-augmented model.}
+\caption{Forward forecast gains vary across periods. (a) Quarterly Politics gains on the S common sample. (b) Pooled gains with paired 95.0\% event-cluster intervals. Gain is price-only minus flow-model Brier loss, $\times10^4$. Coefficients appear in Table~\ref{tab:fwdpred}.}
+\label{fig:forecast}
+\end{figure}
+
+\subsection{Market-level flow and price calibration}
+For each market $g$, we compute the dollar imbalance within each size class $k$: $b_{k,g}=\sum_{i\in\mathcal T_{k,g}}D_i u_i/\sum_{i\in\mathcal T_{k,g}}u_i$. Here $\mathcal T_{s,g}$ contains orders below \$100 and $\mathcal T_{l,g}$ orders of at least \$1,000 over the history ending 24 hours before resolution. We estimate
+\begin{equation}
+\operatorname{logit}\Pr(Y_g=1)=\alpha+\gamma\operatorname{logit}(p_g)+\beta_s b_{s,g}+\beta_l b_{l,g}+\eta_{c(g)}.\label{eq:joint_flow}
+\end{equation}
+Here $p_g$ is the latest switch midpoint by the window endpoint. Eligibility requires at least 200 lifetime trades, 20 window trades, $100p_g\in(2.0,98.0)$ and observed imbalances in both size classes. All nested models share markets and five event-grouped folds. Paired loss intervals use 1,000 event-cluster draws.
+
+Politics has a negative small-flow coefficient conditional on the window-end price, while Crypto's estimate is close to zero (Table~\ref{tab:joint_flow}). More small-order buying therefore accompanies fewer Yes resolutions at a given price in Politics, echoing the trade-level residual in an earlier market window. The Politics joint-flow gain is \EdJointPolGain{} $\times10^{-4}$ on 1,559 markets, with an interval spanning zero. Dollar imbalance aggregates a market history, while the residual follows an individual order; their signs agree across distinct eligible populations.
+
+\begin{table}[tbp]
+\centering
+\caption{Joint-flow logits on common markets ending 24 h before resolution. Coefficients and their event-cluster SEs are multiplied by 10. Brier gains are $\times10^4$, with paired event-cluster intervals.}
+\label{tab:joint_flow}
+\tabstyle
+\input{tables/joint_flow}
+\end{table}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{cross_platform}
+\Description{Panel a compares cash-bin trade shares in Polymarket and Kalshi. Small trades dominate both. Panel b shows positive small-order settlement margins in Polymarket Politics, Polymarket Crypto and Kalshi, with different size gradients.}
+\caption{Cross-venue regularities and differences. (a) Trade shares by cash bin. (b) Gross settlement margins per trade; bars are 95.0\% intervals using each source's event clusters. Polymarket uses the main Yes/No sample 1--24 h before on-chain resolution; Kalshi uses 1--24 h before exchange close. Different events and clocks preclude a causal venue comparison. Kalshi squares are hollow; Polymarket topics retain their colors and markers.}
+\label{fig:crossplatform}
+\end{figure*}
+
+A separate comparison uses 5,799 markets and a price spline with knots fixed before scoring. Allowing a flexible price relationship helps assess whether flow merely proxies for a misspecified calibration curve. Small-flow gains relative to the linear-logit price baseline remain uncertain in both grouped cross-validation and forward evaluation (Table~\ref{tab:spline}). The spline alone also underperforms the linear baseline in the forward sample. Additional flexibility can therefore absorb in-sample variation without improving later predictions. Across the evaluated designs, RQ3 yields a recurring direction coefficient alongside imprecise incremental gains; the evidence supports conditioning the interpretation of a forecast on participation, with predictive deployment requiring further validation.
+
+\subsection{Cross-platform regularities and scope}
+\label{sec:kalshi}
+\textbf{Small orders dominate activity and leave positive settlement margins in both venues.} Kalshi contributes \KalTrades{} trades in \KalMkts{} settled binary markets, observed 1--24 h before exchange close with the same interior-price and cash-bin thresholds. Figure~\ref{fig:crossplatform}(a) compares these trades with Polymarket's main Yes/No sample: orders below \$100 account for over four-fifths of transactions in each venue. Their margins are positive in Kalshi and in both focal Polymarket topics (panel b). This common pattern links broad participation to compensation on the typical small interaction. It accords with Kalshi maker--taker evidence~\cite{burgi2026makers,becker2026microstructure} and Polymarket liquidity-provider results~\cite{akey2026who}; our gross per-trade margins and those papers' returns or account profits retain different weights and targets.
+
+\paragraph{Size gradients and weighting.}
+Kalshi margins remain positive under both trade and dollar weights within every cash bin (Appendix Table~\ref{tab:extkalshi}). Its absolute large-minus-small contrast is imprecise, while within-market cash ranks produce a positive high-minus-low contrast of \KalRank{} bp. Hence, positive small-order compensation generalizes more readily than a particular slope in absolute dollars. Relative ranks measure scale against local activity; dollar bins measure committed cash, and the two need not encode the same participant composition. Le~\cite{le2026decomposing} likewise finds cross-platform political calibration patterns alongside a size gradient that is not robust across venues. That result concerns calibration slopes; ours concerns direction-signed settlement margins.
+
+\paragraph{Prediction and comparability.}
+Kalshi small-flow augmentation worsens forward Brier loss, whereas joint small/large flow improves it by \KalBothG{} $\times10^{-4}$ in a separate, smaller cohort (Appendix Table~\ref{tab:extkalshipred}). The positive joint result shows that order flow can add information in an eligible population; the two cohorts provide separate comparisons with their own price baselines. Together with Polymarket's uncertain gains, these results make forecast improvement conditional on both features and the evaluated population.
+
+This comparison uses different events and clocks. Kalshi's fetch-time books supply no pre-trade midpoint history, so $D(p-Y)$ tests margins. Contract design and settlement semantics constrain comparison~\cite{lee2026derivatives,gebele2026semantic}. Matched studies find context-dependent leadership and pricing gaps~\cite{ng2026discovery,aktug2026discovery,rothschild2014misalignment,zitzewitz2026limits}. Shared participation and small-order compensation therefore coexist with sample-specific size gradients.
+
+\section{Related Work}
+\paragraph{Collective forecasts and participation.}
+Laboratory and political markets aggregate dispersed information~\cite{plott1988rational,forsythe1992anatomy,wolfers2004prediction,arrow2008promise}; related-event and field designs extend this evidence~\cite{hanson2003combinatorial,berg2008accuracy,berg2008results,cowgill2015corporate}. Web platforms expose contribution quality and investor behavior~\cite{horvat2023hidden,soska2021derivatives,kawai2023neighbor,victor2021wash}. We distinguish frequent interactions from capital exposure using a common binary-payoff benchmark.
+
+\paragraph{Execution and price formation.}
+Microstructure models connect order flow, adverse selection and price discovery~\cite{kyle1985continuous,glosten1985bid,easley1987price,glosten1988estimating,hasbrouck1991measuring,huang1997components,madhavan1997why}. Prediction-market work studies liquidity and strategies~\cite{tetlock2008liquidity,rothschild2016trading,bossaerts2024price}, execution versus forecasting~\cite{dellavedova2026profits}, maker--taker outcomes~\cite{burgi2026makers,becker2026microstructure,akey2026who} and quote updates~\cite{akey2026quotes}. Our within/between decomposition and quote checks connect settlement margins to subsequent direction-signed errors, without identifying order size as an exogenous treatment.
+
+\paragraph{Conditional calibration and venue comparisons.}
+Heterogeneous beliefs complicate price interpretation~\cite{manski2006interpreting,wolfers2006interpreting}; calibration varies with price, horizon and aggregation~\cite{snowberg2010explaining,page2013prediction,cardozo2026favorite,reichenbach2026exploring,kagan2026calibration}. Contemporary studies examine order books~\cite{dubach2026anatomy} and political activity~\cite{tsang2026anatomy,tsang2026political,chen2025political}. Le~\cite{le2026decomposing} documents political calibration commonalities alongside unstable cross-venue size effects. Matched studies find conditional leadership and persistent pricing differences~\cite{ng2026discovery,aktug2026discovery,rothschild2014misalignment,zitzewitz2026limits}; design and settlement affect matching~\cite{lee2026derivatives,gebele2026semantic}. We examine an order-conditioned price moment and separately assess forward gains, using Kalshi to distinguish shared small-order margins from sample-specific size gradients.
+
+\newpage
+\section{Discussion and Conclusion}
+\label{sec:discuss}
+\paragraph{Participation and liquidity.}
+Positive per-trade margins coexist with negative capital-weighted point estimates and concentrated outcome exposure. Politics' size gradient involves payoffs; Crypto's mainly reflects price timing. Kalshi shares small-order dominance and positive small-order margins, with different size gradients. Thus, broad participation and compensation on small interactions generalize more readily than an absolute-dollar ranking of informedness.
+
+\paragraph{Conditional forecasts.}
+Small political orders leave positive residuals across horizons, event screens and resolution periods, alongside uncertain forward gains. Kalshi's joint-flow gain in its eligible cohort reinforces the distinction between a conditional error and a usable forecast correction. Prospective evaluation should fix features, bins and cutoffs, then report paired event losses.
+
+\paragraph{Mechanisms and scope.}
+Quote updating, partisan demand and reference-price access offer possible explanations; text classes and BTC features provide descriptive checks. Identifying mechanisms requires contemporaneous references, inventories and repeated participation. Quote coverage is selective; event screens use metadata and retrospective convergence. Gross settlement margins exclude fees and inventory, and midpoint residuals omit executable spreads and depth. These boundaries preserve the distinction between conditional association, trading profit and causal platform effects.
+
+\label{paper:body_end}
+\clearpage
+\nobalance
+\phantomsection\label{paper:references_start}
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{ref}
+\appendix
+\renewcommand{\floatpagefraction}{0.95}
+\renewcommand{\dblfloatpagefraction}{0.95}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{4}
+\setcounter{totalnumber}{8}
+\setcounter{dbltopnumber}{4}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\theHtable}{S\arabic{table}}
+\renewcommand{\theHfigure}{S\arabic{figure}}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\phantomsection\label{paper:appendix_start}
+
+\section{Sample Construction, Fills and Concentration}
+\label{app:defs}
+On-chain payout events define resolution; block timestamps are interpolated at 2.1 seconds per block. The 100-trade sample retains 75.1\% of main Politics trades and 95.7\% of Crypto trades. Overall median horizons are 2.0 hours in Politics and 42.7 minutes in Crypto (90th percentiles 10.5 and 4.2 hours). Median on-chain delays after scheduled close are 14.6 and 2.4 hours. Common-sample trade counts under R, S and C are \PolNR, \PolNS{} and \PolNC{} in Politics and \CryNR, \CryNS{} and \CryNC{} in Crypto. Ordering simultaneous trades by taker address changes alignment by \OrdDiff{} bp (SE \OrdSE).
+
+\begin{table}[!htbp]
+\centering
+\caption{Fill prices and actual share weights on the common H100 sample. The final column uses a share-weighted execution price. Probability bp.}
+\label{tab:fill}
+\input{tables/fill_prices}
+\end{table}
+\begin{table}[!htbp]
+\centering
+\caption{Normalized covariance shifts on the common H100 sample. Market shift: per trade minus per market; order shift: per USD minus per trade. Probability bp.}
+\label{tab:weight_shifts}
+\input{tables/weight_shifts}
+\end{table}
+
+\subsection{Resolution-date concentration}
+\label{app:concentration}
+Table~\ref{tab:concentration} ranks clusters by absolute contribution within topic and weight. Deletion diagnoses influence on a changing population. Table~\ref{tab:concentration_dates} gives Politics' largest dollar-weighted contributors and their volume shares.
+\begin{table}[!htbp]
+\centering
+\caption{Settlement margins and deletion of influential topic-date clusters. Probability bp; parentheses are event-cluster SEs. The final column is the five largest clusters' share of absolute contributions.}
+\label{tab:concentration}
+\tabstyle
+\input{tables/concentration}
+\end{table}
+\begin{table}[!htbp]
+\centering
+\caption{The five largest Politics resolution-date contributors by absolute dollar-weighted contribution. Dollar shares are percentages; contributions are probability bp.}
+\label{tab:concentration_dates}
+\tabstyle
+\input{tables/concentration_dates}
+\end{table}
+
+\section{Quote Validation and Measurement Sensitivity}
+\label{app:measurement}
+\label{sec:quotes}
+\label{sec:proxy}
+The pmxt source is \nolinkurl{Joseph3222/polymarket-orderbook} (CC BY 4.0). Script 13a retrieves the needed row groups, covering each trade's preceding 15 minutes and subsequent two hours plus its H100 endpoint. Complementary books are mirrored onto the reference axis. Table~\ref{tab:quotes} and Figure~\ref{fig:quotes} compare identical trades. With $e=m-m^q$, alignment error is $-De$ and the horizon residual error is $De_{+h}$. Median proxy age is 56.0 s pooled, 142.0 s in Politics and 28.0 s in Crypto. Fresh pairs cover 41.2\% of main trades. Capped-endpoint Politics small/large residuals are $+110.2/-418.7$ bp; observed H100 estimates are $+144.4/-462.5$ bp. Figure~\ref{fig:proxy} compares small-order residuals across midpoint constructions. The full topic-by-size grid is supplied with the analysis outputs.
+\begin{table*}[!tbp]
+\centering
+\caption{Quoted midpoint estimates and paired proxy-minus-quote differences on pmxt-covered main-sample trades. Clock residuals apply the R/S common-horizon rules and same-day quote availability. Market/trade counts describe the pre-trade match. Probability bp; event-cluster SEs.}
+\label{tab:quotes}
+\tabstyle
+\input{tables/quote_validation}
+\end{table*}
+
+\paragraph{Quote error by measurement state.}
+Table~\ref{tab:quote_error} separates signed error, absolute error and negative-cost frequency. Stale/crossed pairs have larger absolute errors; proxy costs are more often negative. Overlapping rows classify the same trades by measurement state.
+\begin{table*}[!tbp]
+\centering
+\caption{Proxy error on pmxt-matched trades. With $e=m-m^q$, $De$ is signed proxy error and $|e|$ is mean absolute error, in probability bp. Outside is the percentage of proxy midpoints outside the quoted spread. The last column reports negative execution-cost percentages for proxy/quote midpoints; parentheses are event-cluster SEs. Rows overlap.}
+\label{tab:quote_error}
+\tabstyle
+\input{tables/quote_error}
+\end{table*}
+
+\subsection{Within/between checks and simulation}
+\label{app:wb}
+Politics alignment is $68.2=-75.1+143.3$ bp and Crypto $82.2=24.1+58.2$. In 200 outcome permutations within topic, midpoint decile and resolution quarter, between-term p-values are 4.5\% (Politics), 3.0\% (Crypto) and 45.0\% (pooled). A run-block direction permutation with fixed price paths gives a within null of $0.8\pm1.5$ bp, compared with 75.1 bp observed. Under S, small Politics alignment is $\WBPolSClkSTot=\WBPolSClkSBtw+\WBPolSClkSWtn$ bp; large-order alignment is $\WBPolLClkSTot=\WBPolLClkSBtw+\WBPolLClkSWtn$ bp.
+
+\label{sec:sim}
+Simulation scenarios cover flow-updating makers, public signals with persistent uninformed directions, inventory pressure and a mixture. The 34 configurations in \nolinkurl{repro_sim_grid.csv} each use three seeds and 2,000 markets. Under flow updating, the mean upward alignment error is \EdSimMean{} bp (range $\EdSimMin$ to \EdSimMax); under public signals it is $\EdSimPublic$ bp. The largest absolute post-horizon error in the simulations is about 6.0 bp. Empirical switch-drift share 64.0\% overlaps both scenarios' ranges; held-out-configuration classification reaches \EdSimAccuracy\% accuracy. The overlap illustrates the observational ambiguity of run/switch descriptors.
+
+\section{Clock Horizons, Periods and Prediction}
+\label{app:robust}
+\label{app:infer}
+\label{app:market}
+Tables~\ref{tab:clock}--\ref{tab:spline} report cutoff eligibility, periods and predictive checks on their defined samples. The full specification heatmap accompanies the replication outputs.
+\begin{table*}[!tbp]
+\centering
+\caption{Clock residuals on each cutoff's common sample. Small-order difference: Politics minus Crypto at one hour. Probability bp; event-cluster SEs.}
+\label{tab:clock}
+\input{tables/clock_residuals}
+\end{table*}
+\begin{table}[!htbp]
+\centering
+\caption{One-hour small-order residuals by resolution period and cutoff. Probability bp; event-cluster SEs.}
+\label{tab:forward}
+\tabstyle
+\input{tables/forward_periods}
+\end{table}
+\begin{table}[!htbp]
+\centering
+\caption{Expanding-window prediction, S common sample. Direction coefficients are logit coefficients multiplied by 10; Brier gains are $\times10^4$. Pooled intervals resample paired event losses.}
+\label{tab:fwdpred}
+\tabstyle
+\input{tables/forward_pred}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\caption{Price calibration and flow on the separate 5,799-market spline sample. Knots: 0.2, 0.4, 0.6, 0.8. Brier losses and gains are multiplied by $10^4$; gains use linear-logit price as baseline. Forward training uses previously resolved markets.}
+\label{tab:spline}
+\tabstyle
+\input{tables/spline}
+\end{table}
+
+
+\section{Accounts and Candidate Reference Classes}
+\label{app:anchor}
+Ordered slug expressions assign candidate classes (\nolinkurl{repro_anchor_rules.csv}). The labels encode question text and require a separate contemporaneous-price check for availability. Extended within-topic controls give execution-cost and margin differences of $\EdAnchorCryCost$ (\EdAnchorCryCostSE) and $\EdAnchorCryMargin$ (\EdAnchorCryMarginSE) bp for Crypto asset-price questions, and $\EdAnchorSportCost$ (\EdAnchorSportCostSE) and $\EdAnchorSportMargin$ (\EdAnchorSportMarginSE) bp for sports-odds questions. These are descriptive associations. Basic-control capped-residual differences are $\EdAnchorCryResidual$ (\EdAnchorCryResidualSE) and $\EdAnchorSportResidual$ (\EdAnchorSportResidualSE) bp, respectively.
+
+\label{app:makers}
+A time split of 1,829 accounts with at least 50 trades per half gives a second-half-on-first-half alignment slope of 0.3; a disjoint-market split gives 0.3. First-half top-decile accounts have held-out trade-weighted alignment of \AccountTop{} bp (SE \AccountSE), compared with \AccountPop{} bp for eligible trades. Equal-account slopes and trade-weighted means measure different quantities. With event fixed effects, the margin coefficient on maker HHI is $\EdHHIAll$ (\EdHHIAllSE) bp pooled and $\EdHHIPol$ (\EdHHIPolSE) in Politics.
+
+\section{Other Books, Venues and Reference Prices}
+\label{app:external}
+Dome snapshots span 14 October 2025--31 March 2026 and retain two-sided books. The selected lead is \DOneLead{} s (\DOneTouch\% touched-side matches). Of \DOneWin{} final-day Politics/Crypto trades, \DOnePre{} have a quote at most 15 min old. Alignment changes by \DOneInfo{} bp (SE \DOneInfoSE), and H100 residuals by \DOneRes{} bp (\DOneResSE). Same-second pmxt/Dome midpoint comparisons have a mean difference of \DOnePmMean{} bp and mean absolute difference of \DOnePmAbs{} bp, with \DOnePmTick\% within a tick.
+\begin{table}[!htbp]
+\centering
+\caption{Dome quote minus transaction midpoint estimates. Alignment and residual columns use their respective paired samples. Probability bp; event-cluster SEs.}
+\label{tab:extdome}
+\tabstyle
+\input{tables/external_dome}
+\end{table}
+
+OpenMarket has \ExtMeta{} BTC records (\ExtInV{} join v1; median life \ExtLife{} h). Its \ExtTickDays{} tick days have median ingest lag \ExtLag{} s and publisher lead-lag \ExtLead{} ms (\ExtTight\% tight), assessing synchronization. Completed and ingested candles within 15 min cover \ExtBtcHit{} of \ExtBtcN{} threshold markets, below the 200-market scoring minimum. Five-minute markets provide \ExtShort{} scored observations: BTC-return gain is \ExtRetG{} [\ExtRetLo, \ExtRetHi] $\times10^{-4}$; return-plus-flow gain is \ExtFlowG{} [\ExtFlowLo, \ExtFlowHi] $\times10^{-4}$. Both intervals span zero. Ten official Binance monthly files from 2023 cover \ExtDsixHit{} of \ExtDsixN{} main-window threshold markets. Spot prices supply features; contract prices remain forecasts.
+
+\subsection{Kalshi construction and supplementary results}
+\label{app:kalshi}
+The trade archive \nolinkurl{TrevorJS/kalshi-trades} is CC BY 4.0. Revision 5c622baffd covers exchange closes from July 2021 to January 2026. Settled binary markets map YES-cent executions to $p$, taker YES/NO to $D=+1/-1$, and outcomes to $Y$. Cash equals contract count times the purchased leg's price. We retain $p\in(0.2,0.8)$ and executions 1--24 h before close; \KalCents\% have complementary YES/NO prices summing to par. The \KalEvents{} event tickers define clusters. Fetch-time bid/ask snapshots are excluded from pre-trade measurement.
+
+Table~\ref{tab:extkalshi} preserves both cash bins and within-market cash ranks. The latter use percentile-rank cutoffs within each market's window; ties can create unequal thirds. All six size groups have positive trade-weighted margins. Dollar weights preserve these signs, while changing levels. The rank contrast is positive and precise, and the absolute-dollar contrast is imprecise. These estimates characterize alternative size definitions within Kalshi; differences from Polymarket also reflect event mix, execution aggregation and event clocks.
+\begin{table}[!htbp]
+\centering
+\caption{Kalshi margins under absolute and within-market relative cash size. Gross probability bp; event-ticker-cluster SEs in parentheses. Contrasts use joint cluster scores for the two means.}
+\label{tab:extkalshi}
+\tabstyle
+\input{tables/external_kalshi_detail}
+\end{table}
+
+Forward logits recalibrate the last YES execution price before the 24 h window and add small cash imbalance, or both small and large imbalances. Each test quarter trains on markets closed before that quarter; intervals resample paired event losses. Table~\ref{tab:extkalshipred} uses each model's observed-flow cohort and its own price-only baseline. Their different market counts and baseline losses rule out reading the gains as a nested comparison on identical observations. The joint-flow improvement applies to its both-flow cohort. Kalshi supplies no focal-order midpoint-residual test here.
+\begin{table}[!htbp]
+\centering
+\caption{Kalshi forward prediction on separate observed-flow cohorts. Price Brier loss, gain and paired event-cluster 95.0\% intervals are multiplied by $10^4$; positive gain favors flow augmentation.}
+\label{tab:extkalshipred}
+\tabstyle
+\input{tables/external_kalshi_prediction}
+\end{table}
+
+\end{document}

@@ -1,0 +1,131 @@
+grp,cell,sample,metric,est_bp,se_market_bp,se_event_bp,n,n_event_clusters,horizon_policy
+YesNo,pooled,main,info,76.01669929033079,11.484426589052172,13.900837549989424,2103188,2044,carry forward last available proxy for PI/over only
+YesNo,pooled,main,eff,184.35400736977897,2.96164150556238,4.507399363597332,2103188,2044,carry forward last available proxy for PI/over only
+YesNo,pooled,main,RS,108.33730807944451,11.728772295904074,15.054226191725864,2103188,2044,carry forward last available proxy for PI/over only
+YesNo,pooled,main,PI_100,106.54063090330251,4.26577027771198,4.795649236525398,2103188,2044,carry forward last available proxy for PI/over only
+YesNo,pooled,main,over_100,30.523931612971463,10.36290943059625,12.557728122694089,2103188,2044,carry forward last available proxy for PI/over only
+YesNo,pooled,observed_h100,info,57.2895409713513,12.965495233624909,15.682012304288582,1774379,1616,100 subsequent trades observed
+YesNo,pooled,observed_h100,eff,148.90025666152957,2.5733580162860195,3.569679908654785,1774379,1616,100 subsequent trades observed
+YesNo,pooled,observed_h100,RS,91.61071569018604,13.210949655922779,16.554849463274643,1774379,1616,100 subsequent trades observed
+YesNo,pooled,observed_h100,PI_100,92.20381821348863,3.4602328257396846,4.008870242333858,1774379,1616,100 subsequent trades observed
+YesNo,pooled,observed_h100,over_100,34.91427724213763,12.26166199897804,14.901391854226388,1774379,1616,100 subsequent trades observed
+YesNo,Politics,main,info,68.19502829415332,23.523598156661762,38.52343072449733,516131,545,carry forward last available proxy for PI/over only
+YesNo,Politics,main,eff,297.18977889063814,8.419987978118892,16.99925830559442,516131,545,carry forward last available proxy for PI/over only
+YesNo,Politics,main,RS,228.9947505964878,24.532742316888587,46.554095388251746,516131,545,carry forward last available proxy for PI/over only
+YesNo,Politics,main,PI_100,146.25295661505427,10.221599281202787,12.183615221552175,516131,545,carry forward last available proxy for PI/over only
+YesNo,Politics,main,over_100,78.05792832090106,20.297721871118302,35.82977584844714,516131,545,carry forward last available proxy for PI/over only
+YesNo,Politics,observed_h100,info,38.046559029251334,29.491287188784817,49.683149853695504,387849,459,100 subsequent trades observed
+YesNo,Politics,observed_h100,eff,235.22330938281954,8.046870374673084,15.934488643320854,387849,459,100 subsequent trades observed
+YesNo,Politics,observed_h100,RS,197.17675035357064,30.509512335388454,57.247801506447,387849,459,100 subsequent trades observed
+YesNo,Politics,observed_h100,PI_100,137.43919938093597,9.866407727005752,12.054106382939763,387849,459,100 subsequent trades observed
+YesNo,Politics,observed_h100,over_100,99.39264035168513,27.123674542720885,48.95208545272014,387849,459,100 subsequent trades observed
+YesNo,Crypto,main,info,82.22661174576021,15.001703881990572,15.657030873958153,1013217,478,carry forward last available proxy for PI/over only
+YesNo,Crypto,main,eff,121.80744781819332,2.8993880075657827,3.1658970363959966,1013217,478,carry forward last available proxy for PI/over only
+YesNo,Crypto,main,RS,39.58083607243807,15.102667644345404,15.906545615968763,1013217,478,carry forward last available proxy for PI/over only
+YesNo,Crypto,main,PI_100,94.36956725281725,3.9473151004949663,4.3801199627539855,1013217,478,carry forward last available proxy for PI/over only
+YesNo,Crypto,main,over_100,12.142955507056913,14.378139059096572,14.675715701958731,1013217,478,carry forward last available proxy for PI/over only
+YesNo,Crypto,observed_h100,info,71.99829771556603,15.470907253179595,16.01835462342097,970065,425,100 subsequent trades observed
+YesNo,Crypto,observed_h100,eff,114.06853368244266,2.687622702562263,2.907442071009579,970065,425,100 subsequent trades observed
+YesNo,Crypto,observed_h100,RS,42.07023596688074,15.627042528873828,16.39370823756512,970065,425,100 subsequent trades observed
+YesNo,Crypto,observed_h100,PI_100,84.69675226832776,3.460048571458798,3.830953083256742,970065,425,100 subsequent trades observed
+YesNo,Crypto,observed_h100,over_100,12.698454552761799,15.002117543127772,15.3128858879753,970065,425,100 subsequent trades observed
+YesNo,Sports,main,info,43.46350954966456,35.86260750002763,34.87789752930962,341177,279,carry forward last available proxy for PI/over only
+YesNo,Sports,main,eff,133.84579163043236,3.112283232645523,5.672179170824329,341177,279,carry forward last available proxy for PI/over only
+YesNo,Sports,main,RS,90.38228208076796,36.262581677563034,36.00876452211879,341177,279,carry forward last available proxy for PI/over only
+YesNo,Sports,main,PI_100,36.459412925870375,14.532582777664357,15.164043419365303,341177,279,carry forward last available proxy for PI/over only
+YesNo,Sports,main,over_100,-7.004096623794125,31.476896349247422,31.38541893861741,341177,279,carry forward last available proxy for PI/over only
+YesNo,Sports,observed_h100,info,24.16512070333513,45.94109658813045,43.8676597874789,244584,221,100 subsequent trades observed
+YesNo,Sports,observed_h100,eff,108.12174774221825,3.4657366029577252,6.2869553332309875,244584,221,100 subsequent trades observed
+YesNo,Sports,observed_h100,RS,83.9566270388823,46.50268401624353,45.26235432968739,244584,221,100 subsequent trades observed
+YesNo,Sports,observed_h100,PI_100,14.748044020755435,11.020938908027649,12.749041631893636,244584,221,100 subsequent trades observed
+YesNo,Sports,observed_h100,over_100,-9.41707668257975,43.677317643947575,43.38440623317576,244584,221,100 subsequent trades observed
+YesNo,Finance,main,info,178.73636074337313,57.04104589756989,67.29701199383088,66437,197,carry forward last available proxy for PI/over only
+YesNo,Finance,main,eff,362.60580923024327,15.66688432068848,19.198212135558002,66437,197,carry forward last available proxy for PI/over only
+YesNo,Finance,main,RS,183.86944848687034,54.321618277172114,62.954732690510966,66437,197,carry forward last available proxy for PI/over only
+YesNo,Finance,main,PI_100,200.82220683173335,27.6374052776222,30.578873216242222,66437,197,carry forward last available proxy for PI/over only
+YesNo,Finance,main,over_100,22.085846088360526,46.570042707992755,51.31130782518751,66437,197,carry forward last available proxy for PI/over only
+YesNo,Finance,observed_h100,info,102.97503585604396,88.56891725323518,102.12093893273921,37361,147,100 subsequent trades observed
+YesNo,Finance,observed_h100,eff,266.08901367155653,16.09800887722397,15.909396140638151,37361,147,100 subsequent trades observed
+YesNo,Finance,observed_h100,RS,163.11397781551216,85.11035397034489,99.58741733876995,37361,147,100 subsequent trades observed
+YesNo,Finance,observed_h100,PI_100,138.15901034755268,24.770199003233692,28.66606497180065,37361,147,100 subsequent trades observed
+YesNo,Finance,observed_h100,over_100,35.18397449150843,82.03458708857907,90.3540398393767,37361,147,100 subsequent trades observed
+YesNo,Politics | s1 <$100,main,info,-0.4855745894685725,25.77654236567496,33.9025031639421,436981,541,carry forward last available proxy for PI/over only
+YesNo,Politics | s1 <$100,main,eff,289.1637865893488,7.764967396723342,15.93023416668505,436981,541,carry forward last available proxy for PI/over only
+YesNo,Politics | s1 <$100,main,RS,289.64936117881945,25.86324597043259,36.64779632845979,436981,541,carry forward last available proxy for PI/over only
+YesNo,Politics | s1 <$100,main,PI_100,109.74599451872874,10.294676637121334,11.832993287269668,436981,541,carry forward last available proxy for PI/over only
+YesNo,Politics | s1 <$100,main,over_100,110.23156910819732,22.05752014097858,28.34890806425276,436981,541,carry forward last available proxy for PI/over only
+YesNo,Politics | s1 <$100,observed_h100,info,-39.629024786408536,32.81887750479368,42.711544796124855,323028,456,100 subsequent trades observed
+YesNo,Politics | s1 <$100,observed_h100,eff,225.65855215610782,7.44396385661023,15.03835598942036,323028,456,100 subsequent trades observed
+YesNo,Politics | s1 <$100,observed_h100,RS,265.28757694251794,32.98595627031541,45.34924802386168,323028,456,100 subsequent trades observed
+YesNo,Politics | s1 <$100,observed_h100,PI_100,104.8192661787208,9.74277577932903,11.650854466288486,323028,456,100 subsequent trades observed
+YesNo,Politics | s1 <$100,observed_h100,over_100,144.4482909651294,29.753162627360574,38.849299069378446,323028,456,100 subsequent trades observed
+YesNo,Politics | s2 $100-1k,main,info,384.1393622442356,47.237332696089126,90.38644723512024,69163,524,carry forward last available proxy for PI/over only
+YesNo,Politics | s2 $100-1k,main,eff,344.919052322614,13.932604061560417,25.00581665330851,69163,524,carry forward last available proxy for PI/over only
+YesNo,Politics | s2 $100-1k,main,RS,-39.22030992162131,48.45452014089078,107.199885442392,69163,524,carry forward last available proxy for PI/over only
+YesNo,Politics | s2 $100-1k,main,PI_100,330.65558658851074,21.750225366941887,27.524057707399297,69163,524,carry forward last available proxy for PI/over only
+YesNo,Politics | s2 $100-1k,main,over_100,-53.483775655724884,44.446791916616206,99.45346790754783,69163,524,carry forward last available proxy for PI/over only
+YesNo,Politics | s2 $100-1k,observed_h100,info,354.9974423695867,56.201689115604836,112.57666238863544,55799,441,100 subsequent trades observed
+YesNo,Politics | s2 $100-1k,observed_h100,eff,282.7611243042555,13.130193976489533,22.88518818273469,55799,441,100 subsequent trades observed
+YesNo,Politics | s2 $100-1k,observed_h100,RS,-72.23631806533123,57.47458783595382,127.9560445162026,55799,441,100 subsequent trades observed
+YesNo,Politics | s2 $100-1k,observed_h100,PI_100,284.40800703381893,20.499898383906437,24.78489193632544,55799,441,100 subsequent trades observed
+YesNo,Politics | s2 $100-1k,observed_h100,over_100,-70.58943533576769,54.79002571183217,121.60586782560915,55799,441,100 subsequent trades observed
+YesNo,Politics | s3 >=$1k,main,info,885.3033250497759,132.7499294441711,203.19606181750387,9987,328,carry forward last available proxy for PI/over only
+YesNo,Politics | s3 >=$1k,main,eff,317.8272479438742,19.36630120672212,32.50084284966354,9987,328,carry forward last available proxy for PI/over only
+YesNo,Politics | s3 >=$1k,main,RS,-567.4760771059026,133.11472698109586,224.7521378241586,9987,328,carry forward last available proxy for PI/over only
+YesNo,Politics | s3 >=$1k,main,PI_100,466.57033990936355,44.57025179135103,57.05168911197598,9987,328,carry forward last available proxy for PI/over only
+YesNo,Politics | s3 >=$1k,main,over_100,-418.732985140413,123.95017180745444,223.5795783929286,9987,328,carry forward last available proxy for PI/over only
+YesNo,Politics | s3 >=$1k,observed_h100,info,858.911793932559,145.1112570093517,227.361466809232,9022,284,100 subsequent trades observed
+YesNo,Politics | s3 >=$1k,observed_h100,eff,283.6739702816377,17.76612519047241,28.778053224570883,9022,284,100 subsequent trades observed
+YesNo,Politics | s3 >=$1k,observed_h100,RS,-575.2378236509214,145.52377892607677,246.50290653693273,9022,284,100 subsequent trades observed
+YesNo,Politics | s3 >=$1k,observed_h100,PI_100,396.4105232805147,39.50549371905997,46.28039153039799,9022,284,100 subsequent trades observed
+YesNo,Politics | s3 >=$1k,observed_h100,over_100,-462.5012706520442,136.21589479464578,240.16365992283917,9022,284,100 subsequent trades observed
+YesNo,Crypto | s1 <$100,main,info,67.06269183036777,17.003951692275276,17.516106162582574,835480,477,carry forward last available proxy for PI/over only
+YesNo,Crypto | s1 <$100,main,eff,116.35965744825225,2.9402656796293423,3.24645402386242,835480,477,carry forward last available proxy for PI/over only
+YesNo,Crypto | s1 <$100,main,RS,49.296965617887615,17.019819852980646,17.818140608495924,835480,477,carry forward last available proxy for PI/over only
+YesNo,Crypto | s1 <$100,main,PI_100,80.3802574150116,4.054599633516383,4.284163129486274,835480,477,carry forward last available proxy for PI/over only
+YesNo,Crypto | s1 <$100,main,over_100,13.317565584643585,16.278563305117537,16.46469678046976,835480,477,carry forward last available proxy for PI/over only
+YesNo,Crypto | s1 <$100,observed_h100,info,58.13425484188356,17.515354473730255,17.88109213425273,801172,425,100 subsequent trades observed
+YesNo,Crypto | s1 <$100,observed_h100,eff,108.79225060357564,2.7214886560898854,2.974318581163478,801172,425,100 subsequent trades observed
+YesNo,Crypto | s1 <$100,observed_h100,RS,50.657995761695474,17.575599408164145,18.247392081399788,801172,425,100 subsequent trades observed
+YesNo,Crypto | s1 <$100,observed_h100,PI_100,71.89352894697896,3.540466459823234,3.7709373281695533,801172,425,100 subsequent trades observed
+YesNo,Crypto | s1 <$100,observed_h100,over_100,13.759274105095436,16.95386403659745,17.147044984732652,801172,425,100 subsequent trades observed
+YesNo,Crypto | s2 $100-1k,main,info,143.20687291316085,22.355718812501895,23.810732443383166,153481,463,carry forward last available proxy for PI/over only
+YesNo,Crypto | s2 $100-1k,main,eff,143.41458048428706,3.9858962952431125,4.474455631798481,153481,463,carry forward last available proxy for PI/over only
+YesNo,Crypto | s2 $100-1k,main,RS,0.2077075711259922,22.478432724275017,23.49764983127252,153481,463,carry forward last available proxy for PI/over only
+YesNo,Crypto | s2 $100-1k,main,PI_100,153.1396055053442,7.575438548198124,10.220301589875739,153481,463,carry forward last available proxy for PI/over only
+YesNo,Crypto | s2 $100-1k,main,over_100,9.932732592183239,21.190151911067414,21.31174883710389,153481,463,carry forward last available proxy for PI/over only
+YesNo,Crypto | s2 $100-1k,observed_h100,info,127.84229398945064,23.11054048701755,23.903971986312026,146286,418,100 subsequent trades observed
+YesNo,Crypto | s2 $100-1k,observed_h100,eff,134.95294496569397,3.672291907655777,4.069089455091039,146286,418,100 subsequent trades observed
+YesNo,Crypto | s2 $100-1k,observed_h100,RS,7.110650976243008,23.360508390819373,23.961527106703702,146286,418,100 subsequent trades observed
+YesNo,Crypto | s2 $100-1k,observed_h100,PI_100,138.87385215841618,6.7491589519000135,7.876912539006821,146286,418,100 subsequent trades observed
+YesNo,Crypto | s2 $100-1k,observed_h100,over_100,11.03155816896535,22.233386549982466,22.365308212535272,146286,418,100 subsequent trades observed
+YesNo,Crypto | s3 >=$1k,main,info,218.6811115263544,42.10230421012136,43.711395977779546,24256,404,carry forward last available proxy for PI/over only
+YesNo,Crypto | s3 >=$1k,main,eff,172.7323970907744,6.728155233888624,7.777575519242598,24256,404,carry forward last available proxy for PI/over only
+YesNo,Crypto | s3 >=$1k,main,RS,-45.948714435579994,41.86812554270968,42.28393577080939,24256,404,carry forward last available proxy for PI/over only
+YesNo,Crypto | s3 >=$1k,main,PI_100,204.35078189058305,18.203655354695563,21.499799834779306,24256,404,carry forward last available proxy for PI/over only
+YesNo,Crypto | s3 >=$1k,main,over_100,-14.330329635771504,37.365579593421785,37.701438711675806,24256,404,carry forward last available proxy for PI/over only
+YesNo,Crypto | s3 >=$1k,observed_h100,info,201.9707893452613,43.37873695839129,44.56127377965889,22607,384,100 subsequent trades observed
+YesNo,Crypto | s3 >=$1k,observed_h100,eff,165.91589414080048,6.266148361903047,6.977456980275904,22607,384,100 subsequent trades observed
+YesNo,Crypto | s3 >=$1k,observed_h100,RS,-36.05489520446066,43.62019363226405,44.28805507296395,22607,384,100 subsequent trades observed
+YesNo,Crypto | s3 >=$1k,observed_h100,PI_100,187.8609403645031,15.833738153670891,18.109429226761716,22607,384,100 subsequent trades observed
+YesNo,Crypto | s3 >=$1k,observed_h100,over_100,-14.109848980758146,40.0881209629292,40.44108177128831,22607,384,100 subsequent trades observed
+SportsML,pooled,main,info,34.29106691776548,6.980859200571182,7.662554789392306,22142063,628,carry forward last available proxy for PI/over only
+SportsML,pooled,main,eff,87.21339228992693,0.3235989788591039,0.4638483545558679,22142063,628,carry forward last available proxy for PI/over only
+SportsML,pooled,main,RS,52.922325372045954,6.972696816946983,7.698009447177837,22142063,628,carry forward last available proxy for PI/over only
+SportsML,pooled,main,PI_100,47.529220496459054,0.8617147284801355,1.2560245729590747,22142063,628,carry forward last available proxy for PI/over only
+SportsML,pooled,main,over_100,13.238153578694028,6.867145736360434,7.469663476708141,22142063,628,carry forward last available proxy for PI/over only
+SportsML,pooled,observed_h100,info,28.965060486845505,7.325013868314278,7.997485579290471,20994722,616,100 subsequent trades observed
+SportsML,pooled,observed_h100,eff,81.538971961665,0.28713090228733557,0.43260840188373695,20994722,616,100 subsequent trades observed
+SportsML,pooled,observed_h100,RS,52.57391147470812,7.318840619183507,8.019681011479701,20994722,616,100 subsequent trades observed
+SportsML,pooled,observed_h100,PI_100,42.83682487181112,0.714338329402129,1.1114340083457983,20994722,616,100 subsequent trades observed
+SportsML,pooled,observed_h100,over_100,13.871764384964393,7.239360633162841,7.8746432973279505,20994722,616,100 subsequent trades observed
+OverUnder,pooled,main,info,55.5385876059864,13.62134046251992,14.098993645341922,3377809,328,carry forward last available proxy for PI/over only
+OverUnder,pooled,main,eff,108.2166853272054,0.6508181404648056,1.3607047894589066,3377809,328,carry forward last available proxy for PI/over only
+OverUnder,pooled,main,RS,52.67809772121385,13.60673073799768,14.207222374132144,3377809,328,carry forward last available proxy for PI/over only
+OverUnder,pooled,main,PI_100,63.81060595505756,4.082711142819043,4.597181034809639,3377809,328,carry forward last available proxy for PI/over only
+OverUnder,pooled,main,over_100,8.272018349071178,12.519833369747476,12.9543700098491,3377809,328,carry forward last available proxy for PI/over only
+OverUnder,pooled,observed_h100,info,22.05431816977234,17.366101463780645,17.643674799770913,2523102,308,100 subsequent trades observed
+OverUnder,pooled,observed_h100,eff,86.91036046160488,0.5821914241418938,1.0722355479870622,2523102,308,100 subsequent trades observed
+OverUnder,pooled,observed_h100,RS,64.85604229183971,17.3618845300944,17.72418163715745,2523102,308,100 subsequent trades observed
+OverUnder,pooled,observed_h100,PI_100,32.85977787685292,3.027329107776924,3.666355774569218,2523102,308,100 subsequent trades observed
+OverUnder,pooled,observed_h100,over_100,10.805459707080221,16.725899468048596,17.2457262922241,2523102,308,100 subsequent trades observed

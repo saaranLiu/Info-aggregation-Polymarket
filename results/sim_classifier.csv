@@ -1,0 +1,7 @@
+split,n_test,accuracy,lo,hi,mean
+"held-out seed, same configs",34,0.9117647058823529,,,
+held-out parameter configs,36,0.6111111111111112,,,
+range of switch_drift_share in S1 order-flow learning,36,,-0.08668497420642628,0.9000948121456032,0.5369171337606805
+range of switch_drift_share in S2 public information,24,,0.37552643641075745,0.8005110481677267,0.565027647301218
+range of switch_drift_share in S3 inventory,18,,-0.4475382291007168,2.9862245863417494,1.0340544343347977
+range of switch_drift_share in S4 mixed,24,,0.2718763275962762,0.7140403839186221,0.517897616799713

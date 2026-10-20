@@ -1,0 +1,37 @@
+grp,stage,n_markets,n_fills,usd,n_trades,n_ev_clusters
+ALL,0 all markets in database,688131,601934424.0,19617467751.16117,,
+ALL,"1 resolved, binary payout, metadata = on-chain winner",546187,596105229.0,19236765166.940605,,
+Other,"2 eligible, by contract type",5231,1311095.0,197995055.757583,,
+OverUnder,"2 eligible, by contract type",85581,8512261.0,812702420.9729307,,
+YesNo,"2 eligible, by contract type",91471,53129967.0,6865026525.044595,,
+SportsML,"2 eligible, by contract type",113291,53665456.0,6731812962.554877,,
+UpDown,"2 eligible, by contract type",250613,479486450.0,4629228202.610619,,
+YesNo,3 >=100 trades (trade = market x block x taker x direction),28862,50551562.0,6745977325.7155695,31502822.0,3042.0
+YesNo,4 final day (1h <= tau < 24h),27475,11388416.0,1862002643.2481446,7028159.0,2996.0
+YesNo,5 mid price |p-0.5|<0.3,11330,3420461.0,217508022.1149778,2108285.0,2047.0
+YesNo,6 proxy midpoint defined,11300,3413725.0,217330051.1167598,2103188.0,2044.0
+YesNo,7 fresh proxy (stale<=1),10810,1423828.0,89480535.45561668,867114.0,1976.0
+YesNo,8 100-trade horizon observed,7819,2921289.0,195050933.0917676,1774379.0,1616.0
+YesNo,9 horizon observed and a switch occurs within it,7818,2920394.0,195017869.92816558,1773646.0,1616.0
+YesNo:Politics,6 proxy midpoint defined,4109,910369.0,58246757.83259074,516131.0,545.0
+YesNo:Politics,7 fresh proxy (stale<=1),3932,380824.0,24746262.77414394,213570.0,533.0
+YesNo:Politics,8 100-trade horizon observed,2701,704374.0,49986032.55084882,387849.0,459.0
+YesNo:Politics,9 horizon observed and a switch occurs within it,2701,704374.0,49986032.550848775,387849.0,459.0
+YesNo:Crypto,6 proxy midpoint defined,2800,1628935.0,118559741.76913244,1013217.0,478.0
+YesNo:Crypto,7 fresh proxy (stale<=1),2696,693518.0,48758876.96334793,428490.0,469.0
+YesNo:Crypto,8 100-trade horizon observed,2360,1567958.0,112134620.32757449,970065.0,425.0
+YesNo:Crypto,9 horizon observed and a switch occurs within it,2360,1567856.0,112132905.71479055,969967.0,425.0
+SportsML,3 >=100 trades (trade = market x block x taker x direction),38922,51059672.0,6586569842.020828,34077536.0,632.0
+SportsML,4 final day (1h <= tau < 24h),38867,46571947.0,6175091148.848587,31013473.0,630.0
+SportsML,5 mid price |p-0.5|<0.3,37145,33228352.0,3996266864.712017,22205648.0,628.0
+SportsML,6 proxy midpoint defined,37106,33147890.0,3991541850.1713376,22142063.0,628.0
+SportsML,7 fresh proxy (stale<=1),36915,13277131.0,1562171954.8582802,8809869.0,627.0
+SportsML,8 100-trade horizon observed,35305,31515283.0,3843033768.967745,20994722.0,616.0
+SportsML,9 horizon observed and a switch occurs within it,35305,31481555.0,3839430023.076547,20965708.0,616.0
+OverUnder,3 >=100 trades (trade = market x block x taker x direction),15251,6484058.0,683930968.2671375,4537683.0,330.0
+OverUnder,4 final day (1h <= tau < 24h),15244,6103362.0,658859191.927459,4271645.0,328.0
+OverUnder,5 mid price |p-0.5|<0.3,14894,4778952.0,541088933.7077787,3408143.0,328.0
+OverUnder,6 proxy midpoint defined,14882,4737791.0,536781828.3708547,3377809.0,328.0
+OverUnder,7 fresh proxy (stale<=1),14819,1761252.0,189178450.7208308,1242644.0,328.0
+OverUnder,8 100-trade horizon observed,13599,3579392.0,447338785.761529,2523102.0,308.0
+OverUnder,9 horizon observed and a switch occurs within it,13598,3557492.0,445605909.13768435,2504913.0,308.0

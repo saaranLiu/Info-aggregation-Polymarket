@@ -1,0 +1,10 @@
+{
+  "identity_max_error_bp": 1.1549872169780429e-10,
+  "headline_tests": 21,
+  "account_top_bp": 876.3095923895187,
+  "account_comparison_bp": 165.71889329997234,
+  "politics_between_permutation_p": 0.045,
+  "crypto_between_permutation_p": 0.03,
+  "classifier_heldout_configs": 0.6111111111111112,
+  "simulation_max_absolute_post_horizon_bias_bp": 6.0015998738
+}

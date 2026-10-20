@@ -1,0 +1,9 @@
+cat,target_markets,target_trades,markets_fetched,trades_main_fetched,trades_main_on_days,markets_with_quotes,trades_validation
+Crypto,766,299925,206.0,41008.0,103474.0,204.0,40714.0
+Culture,86,5987,,,,,
+Finance,375,23383,,,,,
+Other,77,5782,,,,,
+Politics,938,156936,308.0,31165.0,46735.0,287.0,28294.0
+Price Action,24,11376,,,,,
+Sci-Tech,56,5072,,,,,
+Sports,1023,195046,,,,,
