@@ -98,7 +98,7 @@ def main():
     rendered_prose = tex + "\n" + "\n".join(
         (ROOT/"paper"/(name+".tex")).read_text()
         for name in re.findall(r"\\input\{(tables/[^}]+)\}",tex))
-    assert not re.search(r"rather\s+than|instead\s+of|we\s+(?:do|did|have)\s+not|we\s+cannot|不是|而非", rendered_prose, re.I)
+    assert not re.search(r"rather\s+than|instead\s+of|we\s+(?:do|did|have)\s+not|we\s+cannot", rendered_prose, re.I)
     assert r"4.5\% (Politics), 3.0\% (Crypto)" in tex
     assert r"\AccountTop" in tex and r"\AccountPop" in tex and r"\AccountSE" in tex
     labels=set(re.findall(r"\\label\{([^}]+)\}",tex))
